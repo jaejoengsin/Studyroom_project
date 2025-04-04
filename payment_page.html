@@ -36,36 +36,61 @@
             <section class="user-info">
                 <!--fieldset 추가?-->
                 <h2>예약자 정보</h2>
+                <!--table 태그는 안씀 -> 반응형 디자인 css 적용에 불리-->
                 <form>
-                    <label for="name">성함</label>
-                    <input id="name" type="text" name="name">
-                    <label for="account">연락처</label>
-                    <input id="account" type="text" name="account">
-                    <label for="mail">이메일</label>
-                    <input id="mail" type="text" name="mail">
-                    <label for="purpose">사용 목적</label>
-                    <input id="purpose" type="text" name="purpose">
+                    <ul class="user-info">
+                    <li><label for="name">성함</label>
+                        <input id="name" type="text" name="name" required></li>
+                    <li><label for="account">연락처
+                        <input id="account" type="text" name="account" required></li>
+                    <li><label for="mail">이메일</label>
+                        <input id="mail" type="text" name="mail" required></li>
+                    <li><label for="purpose">사용 목적</label>
+                        <input id="purpose" type="text" name="purpose" placeholder="공부하려고..."></li>
                 </form>
             </section>
             <section class="reservation&payment-info">
                 <h2>결제 정보</h2>
                 <form>
-                    <!--예약 페이지 데이터를 자바 스크립트를 이용해서 가져올 것 같음. 그러므로 수정 대상-->
-                    <label>예약 날짜</label>
-                    <label>room 정보</label>
-                    <label>시간</label>
-                    <label>인원</label>
-                    <label>결제예정금액</label>
+                    <ul class="reservation&payment-info">
+                    <!--예약 페이지에서 입력한 데이터를 가져올 것 같음(아마 자바스크립트로?)-->
+                    <li><label>예약 날짜</label></li>
+                    <li><label>room 정보</label></li>
+                    <li><label>시간</label></li>
+                    <li><label>인원</label></li>
+                    <li><label>결제예정금액</label></li>
                 </form>
             </section>
-            <section class="load-nextstep">
-                <h2>결제 방식</h2>
+            <!--포인트(혹은 쿠폰...?) 사용 페이지 가능하면 추가-->
+            <section class="pay-method">
+                <h2>결제 방법</h2>
                 <form>
-                    <table>
-                    </table>
+                    <ul class="pay-method">
+                        <li><label for="naver"><input id="naver" type="radio" name="pay_method"></label></li>
+                        <li><label for="kakao"><input id="kakao" type="radio" name="pay_method"></label></li>
+                        <li><label for="card"><input id="card" type="radio" name="pay_method"></label></li>
+                        <li><label for="phone"><input id="phone" type="radio" name="pay_method"></label></li>
+                        <li><label for="bankbook"><input id="bankbook" type="radio" name="pay_method"></label></li>
+                    </ul>
+
                 </form>
             </section>
-            <!-- 각 페이지별 개별 콘텐츠가 들어가는 부분 -->
+            <section class="conditions">
+                <div class="conditions">
+                <h3>이용안내 및 약관</h3>
+                <p>안내 내용</p>
+                <input id="checkbox" type="checkbox"><label for="checkbox">동의</label><!--버튼을 눌러 동의를 구하는 것까지 (구현은 가능하지만)필요한지 모르겠음-->
+                </div>
+            </section>
+            <section class="pay">
+                <div class="pay">
+                    <!--결제하기 옆에 "데이터 금액 추가"기능 나중에 구현-->
+                    <!--자바스크립트로 추가 작업을 할 수도 있을지도 몰라서 일단 button으로 구현(onclick이 버튼 누르면 자바스크립트 처리 후 입력한 페이지로 이동)
+                    아니라면, <a>로 변경할수도...-->
+                    <button type="submit" onclick="location.href='complete_payment_page.html'"><span id="acount"></span>결제하기</button>
+                </div>
+            </section>
+
         </main>
     
         <!-- 푸터 영역 -->

@@ -6,6 +6,89 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 헤더 영역 -->
+    <header class="#">
+        <!--페이지에 보일 메인 로고 추가-->
+        <h1 class="logo">
+            <a href=""><img src="" alt="메인로고"></a>
+        </h1>
+        <!--메인 로고 옆 아니면 아래에 넣을 메인 이름과 짧은 소개-->
+        <div class ="main-text">
+        <h2>스터디룸이름</h1>
+        <h3>소개:모두를 위한 공간</h2>
+        </div>
+
+        <!--헤더 영역에서 가장 아래에 다른 페이지 전환 메뉴창-->
+        <div class="header-bottom">
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="#">오시는길</a></li>
+                <li><a href="reservation.html">예약</a></li>
+                <li><a href="mypage.html">이용안내</a></li>
+                <li><a href="support.html">고객지원</a></li>
+            </ul>
+        </nav>
+        </div>
+        <!--헤더 영역 가장 오른쪽 끝에 로그인 링크-->
+        <div class="header-right-login"><a></a></div>
+    </header>
+
+    <main>
+        <!--예약 정보 위에 작은 이미지 하나 더 띄울까 생각중-->
+      <section class="pay-complete">
+        <h2>예약이 완료되었습니다!</h2>
+        <!--일단은 테이블로 정리, 내부 데이터는 예약 페이지에서 입력한 데이터를 가져옴(자바 스크립트 연동?)
+         이렇게 정적으로 구조만 잡아놓고 나중에 수정-->
+        <table border="1">
+            <tr>
+                <td>날짜</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>시간</td>
+                <td>00:00~00:00</td>
+            </tr>
+            <tr>
+                <td>방</td>
+                <td>room A</td>
+            </tr>
+            <tr>
+                <td>인원</td>
+                <td>5명</td>
+            </tr>
+            <tr>
+                <td>예약자</td>
+                <td>최재정</td>
+            </tr>
+            <tr>
+                <td>결제수단</td>
+                <td>네이버 페이</td>
+            </tr>
+            <tr>
+                <td>금액</td>
+                <td>10000원</td>
+            </tr>
+        </table>
+      </section>
+      <!--이후 마이 페이지 연동 가능하면 연동 링크 추가-->
+      
+
+    </main>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 스터디룸 예약 시스템</p>
+            <ul>
+                <li><a href="about.html">사업체 소개</a></li>
+                <li><a href="support.html">고객지원</a></li>
+                <li><a href="map.html">오시는 길</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
     
 </body>
 </html>
