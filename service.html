@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>고객지원 | 웹프스터디룸</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 헤더 */
+    header {
+      background-color: #f4f4f4;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .login-btn {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      padding: 8px 16px;
+      font-size: 16px;
+      text-decoration: none;
+      border: 1px solid #333;
+      border-radius: 4px;
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-inner h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    /* 네비게이션 바 */
+    nav.navbar {
+      background-color: #ddd;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav.navbar a {
+      margin: 0 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* 본문 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    section h2 {
+      font-size: 24px;
+    }
+
+    hr {
+      margin: 12px 0;
+    }
+
+    /* 푸터 */
+    footer {
+      background-color: #f1f1f1;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
+
+    footer .policy,
+    footer .shopinfo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    footer .address {
+      margin-top: 10px;
+    }
+
+    footer dl {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <h1>웹프스터디룸</h1>
+      <a class="login-btn" href="login.html">로그인</a>
+    </div>
+  </header>
+
+  <!-- 네비게이션 바 -->
+  <nav class="navbar">
+    <a href="index.html">홈</a>
+    <a href="guide.html">이용안내</a>
+    <a href="support.html">고객지원</a>
+    <a href="location.html">오시는길</a>
+  </nav>
+
+  <!-- 고객지원 제목 및 탭 -->
+  <div class="container">
+    <h2>고객지원</h2>
+
+    <!-- 상단 메뉴 -->
+    <nav style="margin-bottom: 30px;">
+      <a href="#notice" style="margin-right: 30px; font-weight: bold; text-decoration: none;">공지사항</a>
+      <a href="#faq" style="font-weight: bold; text-decoration: none;">FAQ</a>
+    </nav>
+
+    <!-- 공지사항 -->
+    <section id="notice">
+      <h3>공지사항</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>공지 | 웹프 스터디룸 1 | 날짜 2025-04-06<hr></li>
+        <li>공지 | 시스템 점검 안내 | 날짜 2025-04-03<hr></li>
+        <li>공지 | 봄맞이 이벤트 오픈 | 날짜 2025-03-28<hr></li>
+        <li>공지 | 이용 요금 변경 안내 | 날짜 2025-03-15<hr></li>
+        <li>공지 | 명절 휴무 안내 | 날짜 2025-02-05<hr></li>
+      </ul>
+
+      <!-- 페이지 번호 -->
+      <div style="margin-top: 20px;">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="margin-top: 40px;">
+      <h3>자주 묻는 질문 (FAQ)</h3>
+      <ol style="padding-left: 20px;">
+        <li><a href="faq1.html">예약은 어떻게 하나요?</a></li><hr>
+        <li><a href="faq2.html">취소 및 변경은 언제까지 가능한가요?</a></li><hr>
+        <li><a href="faq3.html">예약을 변경하고 싶은데 어떻게 해야 하나요?</a></li><hr>
+        <li><a href="faq4.html">음식물 반입이 가능한가요?</a></li><hr>
+      </ol>
+    </section>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="policy">
+      <ul></ul>
+      <p class="address">
+        경기대 수원캠퍼스 웹프 스터디룸<br>
+        사업자명 : <br>
+        사업자등록번호 : <br>
+        개인정보보호관리 : k<br>    
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
+
+</body>
+</html>
