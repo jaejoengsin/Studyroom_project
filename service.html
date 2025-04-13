@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>고객지원 | 웹프스터디룸</title>
+  <meta charset="UTF-8" />
+  <title>웹프스터디룸</title>
   <style>
     body {
       font-family: sans-serif;
@@ -12,47 +12,49 @@
       padding: 0;
     }
 
-    /* 헤더 */
-    header {
-      background-color: #f4f4f4;
-      padding: 20px 0;
-      text-align: center;
-    }
-
+    /* 로그인 버튼 */
     .login-btn {
-      position: absolute;
+      position: fixed;
+      top: 10px;
       right: 20px;
-      top: 30px;
-      padding: 8px 16px;
       font-size: 16px;
       text-decoration: none;
-      border: 1px solid #333;
-      border-radius: 4px;
+      color: #305070;
+      background: none;
+      border: none;
+      z-index: 1001;
     }
 
-    .header-inner {
-      position: relative;
-      max-width: 1200px;
+    /* 헤더 전체 */
+    header {
+      background-color: #fff5eb;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    /* 로고 이미지 */
+    .logo {
+      width: 160px;
+      height: auto;
       margin: 0 auto;
-    }
-
-    .header-inner h1 {
-      margin: 0;
-      font-size: 32px;
     }
 
     /* 네비게이션 바 */
     nav.navbar {
-      background-color: #ddd;
+      background-color: #305070;
+      color: #fff5eb;
       padding: 10px 0;
-      text-align: center;
     }
 
     nav.navbar a {
       margin: 0 30px;
       text-decoration: none;
       font-weight: bold;
-      color: #000;
+      color: #fff5eb;
     }
 
     /* 본문 */
@@ -94,21 +96,19 @@
 </head>
 <body>
 
+  <!-- 로그인 버튼 -->
+  <a class="login-btn" href="login.html">log in</a>
+
   <!-- 헤더 -->
   <header>
-    <div class="header-inner">
-      <h1>웹프스터디룸</h1>
-      <a class="login-btn" href="login.html">로그인</a>
-    </div>
+    <img class="logo" src="로고2.png" alt="로고">
+    <nav class="navbar">
+      <a href="#">홈</a>
+      <a href="#">이용안내</a>
+      <a href="#">고객지원</a>
+      <a href="#">오시는길</a>
+    </nav>
   </header>
-
-  <!-- 네비게이션 바 -->
-  <nav class="navbar">
-    <a href="index.html">홈</a>
-    <a href="guide.html">이용안내</a>
-    <a href="support.html">고객지원</a>
-    <a href="location.html">오시는길</a>
-  </nav>
 
   <!-- 고객지원 제목 및 탭 -->
   <div class="container">
