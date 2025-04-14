@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: block;
+            height: 10vw;
+            max-height: 80px;
+            min-height: 50px;
+            width: 100vw;
+            position: relative;
+            background-color: white;
+            background-clip: content-box;
+            margin: 0;
+            text-align: center;
+            border: medium solid black;
+            padding: 5px;
+            box-sizing: border-box;
+            
+          }
+          #heaer-main {
+            height: 100%;
+            width: 100%;
+            background-color: #26966A;
+            border: medium solid black;
+            box-sizing: border-box;
+          }
+
+          #header-main-logo {
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            height: 100%;
+            width: 150px;
+            margin: 0 auto;
+            box-sizing: border-box;
+
+
+          }
+
+          #header-main-login{
+            position: absolute;
+            right: 45px;
+            bottom: 10px;
+            width: 10px;
+            text-decoration: none;
+            box-sizing: border-box;
+          }
+
+          #logo {
+            height: 100%;
+            width: 80%;
+            margin: 0 auto;
+          }
+
+          #menu-container {
+            position:fixed;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            width: 100vw;
+            background-color: rgba(224,224, 224, 0.5);
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0 30px;
+          
+      
+          }
+
+          .item {
+            list-style: none;
+            border: 1,5px;
+            border-style: dashed;
+            border-color: green; 
+            text-align: center;
+            flex-grow: 0;
+            flex-shrink:0 ;
+            flex-basis:10%;
+
+          }
+
+          #menu-container a {
+           
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.1vw;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+    
+
+
+     
+    </style>
+<body>
+    <header>
+        <div id="heaer-main">
+            <h1 id="header-main-logo"><a><img src="studyroom_logo.png" id="logo"></a></h1>
+            <a id="header-main-login">login</a>
+        </div>
+    </header>
+    <nav >
+      <ul id="menu-container" >
+        <li class="item"><a href="index.html">홈</a></li>
+        <li class="item"><a href="guide.html">이용안내</a></li>
+        <li class="item"><a href="support.html">고객지원</a></li>
+        <li class="item"><a href="location.html">오시는길</a></li>
+        <li class="item"><a href="mypage">mypage</a></li>
+        <li class="item"><a href="회원가입">회원가입</a></li> 
+        </ul>
+    </nav>
+</body>
+</html>
