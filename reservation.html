@@ -10,54 +10,75 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* 헤더 */
+    /* 로그인 버튼 */
+    .login-btn {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #305070;
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    /* 헤더 전체 */
     header {
-      background-color: #f4f4f4;
-      padding: 20px 0;
-      text-align: center;
-      position: sticky;
+      background-color: #fff5eb;
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .login-btn {
-      position: absolute;
-      right: 20px;
-      top: 28px;
-      padding: 8px 16px;
-      border: 1px solid #333;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav.navbar {
-      background-color: #ddd;
-      padding: 10px 0;
       text-align: center;
+      padding-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* 로고 이미지 */
+    .logo {
+      width: 160px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* 네비게이션 바 - 플렉스 레이아웃 */
+    nav.navbar {
+      background-color: #305070;
+      color: #fff5eb;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center; /* 중앙 정렬 */
+      align-items: center;
+      transition: background-color 0.3s ease;
     }
 
     nav.navbar a {
       margin: 0 30px;
       text-decoration: none;
       font-weight: bold;
-      color: #000;
+      color: #fff5eb;
+      transition: color 0.3s, text-decoration 0.3s;
     }
 
-    /* 메인 콘텐츠 */
+    nav.navbar a:hover {
+      color: #ffeb3b; /* 마우스 오버 시 노란색 */
+      text-decoration: underline;
+    }
+
+
+    /* 본문 */
     main {
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
+      transition: background-color 0.3s ease;
     }
 
+    /* 시간 선택 */
     .time-container {
       display: flex;
       overflow-x: auto;
@@ -101,23 +122,62 @@
     footer dl {
       margin: 10px 0;
     }
+
+    /* 낮 시간 테마 (아이보리/화사한 테마) */
+    .daytime {
+      background-color: #fff5eb;
+      color: #305070;
+    }
+
+    .daytime header {
+      background-color: #fff5eb;
+    }
+
+    .daytime nav.navbar {
+      background-color: #305070;
+    }
+
+    .daytime footer {
+      background-color: #f1f1f1;
+      color: #305070;
+    }
+
+    /* 밤 시간 테마 (남색/회색 테마) */
+    .nighttime {
+      background-color: #2f3b4c;
+      color: #e0e0e0;
+    }
+
+    .nighttime header {
+      background-color: #3a4d64;
+    }
+
+    .nighttime nav.navbar {
+      background-color: #2f3b4c;
+    }
+
+    .nighttime footer {
+      background-color: #212b34;
+      color: #e0e0e0;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- 헤더 -->
-  <header>
-    <h1>웹프스터디룸</h1>
-    <a class="login-btn" href="login.html">로그인</a>
-  </header>
+<!-- 로그인 버튼 -->
+<a class="login-btn" href="login.html">log in</a>
 
-  <!-- 네비게이션 바 -->
+<!-- 헤더 -->
+<header>
+  <img class="logo" src="icon2.png" alt="icon">
   <nav class="navbar">
-    <a href="index.html">홈</a>
-    <a href="guide.html">이용안내</a>
-    <a href="support.html">고객지원</a>
-    <a href="location.html">오시는길</a>
+    <a href="#">홈</a>
+    <a href="#">이용안내</a>
+    <a href="#">고객지원</a>
+    <a href="#">오시는길</a>
   </nav>
+</header>
 
   <!-- 메인 콘텐츠 -->
   <main>
@@ -167,13 +227,35 @@
       </dl>
       <dl>
         <dt>예약상담시간 : </dt>
-        <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+        <dd>평일&토요일 10시~22시 (일요일 10시~20시)</dd>
       </dl>
     </div>
   </footer>
 
   <!-- 스크립트 -->
   <script>
+    // 시간대별 테마 변경
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
+
+      if (isDaytime) {
+        document.body.classList.add('daytime');
+        document.body.classList.remove('nighttime');
+      } else {
+        document.body.classList.add('nighttime');
+        document.body.classList.remove('daytime');
+      }
+    }
+
+    // 페이지 로드 시 테마 적용
+    updateTheme();
+
+    // 1시간마다 테마 업데이트
+    setInterval(updateTheme, 60 * 60 * 1000);
+
+    // 예약 관련 기능
     const timeContainer = document.getElementById("timeContainer");
     const selectedTimeSpan = document.getElementById("selected-time");
     const selectedDateSpan = document.getElementById("selected-date");
