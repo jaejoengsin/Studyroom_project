@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스터디룸 예약 시스템</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 폰트링크 -->
+    <!-- content01 -->
+    <link rel="stylesheet" href="assets/css/font_style.css">
+
+
     <style>
         body {
           font-family: sans-serif;
@@ -113,10 +118,10 @@
         
         .main-first-visible-bgd{
           position: absolute;
-          width: auto;
-          height: auto;
+          width: 100%;
+          height: 100%;
           background-color: blue;
-          /*background-image: url();*/
+          background-image: url("icon.png");
           background-repeat: no-repeat;
           background-position: center;
           background-size: 1000px 500px;
@@ -124,6 +129,133 @@
 
 
         }
+
+        .main-introduce {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 250px;
+          align-items: center;
+        }
+
+        .main-introduce div {
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+          position:absolute;
+          text-align: center;
+          font-family: 'batang';
+          font-weight: bold;
+        }
+
+
+
+
+        /*content1 area*/
+        .content01 {
+          display: block;
+          position: relative;
+          width: 100%;
+          height: 900px;
+          background-color: #fff5eb;
+          font-family:'batang';
+
+        }
+
+        .content01 .explainarea {
+          position: relative;
+          width: 100%;
+          height:250px;
+          padding: 0 15px;
+          box-sizing: border-box;
+          line-height: 250px;
+          text-align: center;
+        }
+
+
+        .content01 .showarea {
+          display: block;
+          position: relative;
+          padding-top: 20px;
+          width: 100%;
+          height: 400px;
+        }
+
+  
+
+        .content01 .show-box {
+          display: block;
+          position: absolute;
+          width: 400px;
+          height: 100%;
+          left:50%;
+          margin-left: -200px;
+          /*background-color: aqua;*/
+        }
+
+
+        .content01 .button-area {
+          float:left;
+          width: 15%;
+          height: 100%;
+          /*background-color: red;*/
+
+        }
+
+        .content01 .showbutton-prev {
+          position: absolute;
+          width:60px;
+          height:60px;
+          top:50%;
+          margin-top:-30px;
+          border: 0;
+          background-image:url("assets/icons/free-icon-back-button-7893865.png");
+          background-repeat: no-repeat;
+          background-size: 60px 60px;
+        }
+
+        .content01 .showslide-list {
+          float: left;
+          width: 70%;
+          height: 100%;
+        }
+
+        .content01 .showslide-image {
+          height: 65%;
+          width: 100%;
+          background-image: url("assets/images/room601.png");
+          background-repeat: no-repeat;
+          background-size: 100%;
+
+
+        }
+
+        .content01 .showslide-txt {
+          height: 35%;
+          width: 100%;
+          margin: 5px;
+          border: 0.5px solid black ;
+          box-sizing: border-box;
+         
+        }
+
+
+
+        .content01 .showbutton-next {
+          position: absolute;
+          width:60px;
+          height:60px;
+          top:50%;
+          margin-top:-30px;
+          background-image: url("assets/icons/free-icon-next-button-7893857.png");
+          background-repeat: no-repeat;
+          border: 0;
+          background-size: 60px 60px;
+
+        }
+
+
+
 
       </style>
 </head>
@@ -150,10 +282,41 @@
     <main>
         <section class="main-first-visible">
           <div class="main-first-visible-bgd">
-            <p>adfafsaf</p>
           </div>
-
         </section>
+        <section class="main-introduce">
+          <div>
+              <h2 style="font-size: 1.8em;">모두를 위한, 모두의 공간</h2>
+              <p style="font-size: 1.4em;">자유롭게, 편안하게</p>
+          </div>
+        </section>
+        <section class="content01">
+          <div class="explainarea">
+            <p style="font-size: 1.5em;">
+              그룹 스터디, 각종 회의를 위한 다양한 맞춤형 공간
+            </p>
+          </div>
+          <div class="showarea">
+          <div class="show-box">
+            <div class="button-area">
+              <button class="showbutton-prev"></button>
+            </div>
+            <div class="showslide-list drag">
+              <div class="showslide-image">
+
+              </div>
+              <div class="showslide-txt">
+                <p style="text-align: center;"><b>Room 603</b></p>
+                <p>회의에 적합한 강의실</p>
+              </div>
+            </div>
+            <div class="button-area">
+              <button class="showbutton-next"></button>
+            </div>
+           </div>
+          </div>
+        </section>
+        
 
 
 
