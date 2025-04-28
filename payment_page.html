@@ -8,7 +8,7 @@
     
     <style>
         body {
-          font-family: 'batang';
+          font-family: sans-serif;
           font-size: 18px;
           line-height: 1.8;
           margin: 0;
@@ -118,36 +118,53 @@
 
         }
 
+        /*전체 결제 페이지 레이아웃*/
         .paymentarea {
           position: relative;
-          width: 900px;
+          width: 1000px;
           height: 100%;
           margin: 0 auto;
-          background-color: antiquewhite;
+          /*background-color: antiquewhite;*/
         }
 
-        .user-info {
+        .payment-title {
+          margin: 15px;
+          font-size: 1.3em;
+          text-align: center;
+
+        }
+
+        /*각 섹션 별 레이아웃*/
+        .payment-info {
           width: 100%;
           padding: 5px;
-          border: 1px solid black;
+          border:  2px dashed black;
+          border-radius: 30px;
+          background-color: #fff5eb;
           box-sizing: border-box;
         }
 
-        .user-info li {
+        /*예약자 정보*/
+
+        .payment-info li {
+          display: flex;
           width: 100%;
-          height: 50px;
-          padding-left: 5px;
+          height: 30px;
+          margin: 20px 0px;  
         }
 
-        .user-info label {
-          display: inline-block;
-          width: 90px;
-          height: 100%;
-          margin: 0px 2px;
+        .payment-info label {
+          width: 80px;              /* label 폭 고정 (텍스트 길이에 따라 조정 가능) */
+          margin-left:10px;       /* label과 input 사이 간격 */
           text-align: center;
         }
 
-        
+        .payment-info input {
+          flex-basis: 100px;        /* 남은 공간을 input이 꽉 채움 */
+          margin-left: 10px;
+          padding: 5px;             /* input 내부 여백 */
+          box-sizing: border-box;   /* padding 포함해서 크기 계산 */
+        }
 
 
       </style>
@@ -171,37 +188,37 @@
         <main>
             <div class="inform"><h2>결제 페이지</h2></div>
             <div class="paymentarea">
-            <h2>예약자 정보</h2>
-            <section class="user-info">
+            <h2 class="payment-title">예약자 정보</h2>
+            <section class="payment-info">
                 <!--fieldset 추가?-->
                 <!--table 태그는 안씀 -> 반응형 디자인 css 적용에 불리-->
                 <form>
                     <ul>
                     <li><label for="name">성함</label>
                         <input id="name" type="text" name="name" required></li>
-                    <li><label for="account">연락처
+                    <li><label for="account">연락처</label>
                         <input id="account" type="text" name="account" required></li>
                     <li><label for="mail">이메일</label>
                         <input id="mail" type="text" name="mail" required></li>
                     <li><label for="purpose">사용 목적</label>
-                        <input id="purpose" type="text" name="purpose" placeholder="공부하려고..."></li>
+                        <input id="purpose" type="text" name="purpose" ></li>
                 </form>
             </section>
-            <section class="reservation&payment-info">
-                <h2>결제 정보</h2>
+            <h2 class="payment-title">결제 정보</h2>
+            <section class="payment-info">
                 <form>
-                    <ul class="reservation&payment-info">
+                    <ul>
                     <!--예약 페이지에서 입력한 데이터를 가져올 것 같음(아마 자바스크립트로?)-->
-                    <li><label>예약 날짜</label></li>
-                    <li><label>room 정보</label></li>
-                    <li><label>시간</label></li>
-                    <li><label>인원</label></li>
-                    <li><label>결제예정금액</label></li>
+                    <li><label>예약 날짜</label><input type="text" name="name" required></li>
+                    <li><label>room</label><input type="text" name="name" required></li>
+                    <li><label>시간</label><input type="text" name="name" required></li>
+                    <li><label>인원</label><input type="text" name="name" required></li>
+                    <li><label>결제 금액</label><input type="text" name="name" required></li>
                 </form>
             </section>
             <!--포인트(혹은 쿠폰...?) 사용 페이지 가능하면 추가-->
+            <h2 class="payment-title">결제 수단</h2>
             <section class="pay-method">
-                <h2>결제 방법</h2>
                 <form>
                     <ul class="pay-method">
                         <li><label for="naver"><input id="naver" type="radio" name="pay_method"></label></li>
