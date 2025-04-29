@@ -8,7 +8,7 @@
     
     <style>
         body {
-          font-family: sans-serif;
+          font-family: Arial,sans-serif;
           font-size: 18px;
           line-height: 1.8;
           margin: 0;
@@ -110,21 +110,26 @@
           padding-top: 120px;
         }
 
-        .inform {
-          width:100%;
-          height: 100px;
-          padding-top:40px;
-          text-align: center;
+      
 
+        /*전체 결제 페이지 레이아웃, reservation 페이지의 레이아웃과 동일하게 작성. main에 padding-top을 적용하였기 때문에 nav바 사이 거리가 있음. 나중에 수정해야 힘*/
+        .paymentarea {
+          background-color: #fff5eb;
+          /* 베이지 톤 고정 */
+          color: #305070;
+          /* 글자색 고정 */
+          max-width: 600px;
+          margin: 150px auto 50px auto;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /*전체 결제 페이지 레이아웃*/
-        .paymentarea {
-          position: relative;
-          width: 1000px;
-          height: 100%;
-          margin: 0 auto;
-          /*background-color: antiquewhite;*/
+        .payment-main-title {
+          margin: 0px 0px 20px;
+          font-size: 1.5em;
+          text-align: center;
+
         }
 
         .payment-title {
@@ -138,9 +143,7 @@
         .payment-info {
           width: 100%;
           padding: 5px;
-          border:  2px dashed black;
-          border-radius: 30px;
-          background-color: #fff5eb;
+          border-bottom: 1px solid gray;
           box-sizing: border-box;
         }
 
@@ -155,14 +158,18 @@
 
         .payment-info label {
           width: 80px;              /* label 폭 고정 (텍스트 길이에 따라 조정 가능) */
-          margin-left:10px;       /* label과 input 사이 간격 */
+          margin:0px 10px;       /* label과 input 사이 간격 */
           text-align: center;
+          font-size: medium;
         }
+        .payment-info span {
+          font-size: medium;
 
+        }
         .payment-info input {
           flex-basis: 100px;        /* 남은 공간을 input이 꽉 채움 */
-          margin-left: 10px;
           padding: 5px;             /* input 내부 여백 */
+          border:0px;
           box-sizing: border-box;   /* padding 포함해서 크기 계산 */
         }
 
@@ -186,8 +193,8 @@
 
         <!-- 메인 콘텐츠 영역 -->
         <main>
-            <div class="inform"><h2>결제 페이지</h2></div>
             <div class="paymentarea">
+            <h2 class="payment-main-title">결제하기</h2>
             <h2 class="payment-title">예약자 정보</h2>
             <section class="payment-info">
                 <!--fieldset 추가?-->
@@ -209,11 +216,11 @@
                 <form>
                     <ul>
                     <!--예약 페이지에서 입력한 데이터를 가져올 것 같음(아마 자바스크립트로?)-->
-                    <li><label>예약 날짜</label><input type="text" name="name" required></li>
-                    <li><label>room</label><input type="text" name="name" required></li>
-                    <li><label>시간</label><input type="text" name="name" required></li>
-                    <li><label>인원</label><input type="text" name="name" required></li>
-                    <li><label>결제 금액</label><input type="text" name="name" required></li>
+                    <li><label>예약 날짜</label><span id="#">| 2025-05-02</span></li>
+                    <li><label>room</label><span id="#">| 605호</span></li>
+                    <li><label>시간</label><span id="#">| 00:30 ~ 02:30</span></li>
+                    <li><label>인원</label><span id="#">| 5명</span></li>
+                    <li><label>결제 금액</label><span id="#">| 10,000원</span></li>
                 </form>
             </section>
             <!--포인트(혹은 쿠폰...?) 사용 페이지 가능하면 추가-->
