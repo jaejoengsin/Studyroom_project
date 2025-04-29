@@ -117,13 +117,17 @@
     }
 
     .time-slot {
-      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
       padding: 10px;
       margin: 5px;
-      border: 1px solid #000;
-      cursor: pointer;
-      min-width: 60px;
+      min-width: 70px;
       text-align: center;
+    }
+
+    .time-slot:hover {
+      background: #e0e0e0;
     }
 
     .selected-time {
@@ -247,12 +251,12 @@
     </div>
   </main>
 
-  <footer>
+  <footer> //여기서부터
     <div class="policy">
       <p class="address">
         스터디룸 : Insight Room<br>
         사업자명 : 최재정, 박예원<br>
-        사업자등록번호 : -202311694<br>
+        사업자등록번호 : 202015497-202311694<br>
       </p>
     </div>
     <div class="shopinfo">
@@ -283,7 +287,8 @@
     }
 
     updateTheme();
-    setInterval(updateTheme, 60 * 60 * 1000);
+    setInterval(updateTheme, 60 * 60 * 1000); 
+
 
     // 예약 기능
     const timeContainer = document.getElementById("timeContainer");
