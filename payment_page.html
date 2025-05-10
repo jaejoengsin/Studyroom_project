@@ -5,176 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>payment_page</title>
     <link rel="stylesheet" href="assets/css/font_style.css">
-    
-    <style>
-        body {
-          font-family: Arial,sans-serif;
-          font-size: 18px;
-          line-height: 1.8;
-          margin: 0;
-          padding: 0;
-        }
-
-        ul {
-          margin: 0;
-          padding: 0;
-        }
-
-        li {
-
-          list-style: none;
-        }
-    
-        /* 로그인 버튼 */
-        .login-btn {
-          position: fixed;
-          top: 10px;
-          right: 20px;
-          font-size: 16px;
-          text-decoration: none;
-          color: #305070;
-          background: none;
-          border: none;
-          z-index: 1001;
-        }
-    
-        /* 헤더 전체 */
-        header {
-          background-color: #fff5eb;
-          position: fixed;
-          width: 100%;
-          top: 0;
-          z-index: 1000;
-          text-align: center;
-          padding-top: 10px;
-        }
-    
-        /* 로고 이미지 */
-        .logo {
-          width: 160px;
-          height: auto;
-          margin: 0 auto;
-        }
-    
-        /* 네비게이션 바 */
-        nav.navbar {
-          background-color: #305070;
-          color: #fff5eb;
-          padding: 10px 0;
-        }
-    
-        nav.navbar a {
-          margin: 0 30px;
-          text-decoration: none;
-          font-weight: bold;
-          color: #fff5eb;
-        }
-    
-        /* 본문 */
-        .container {
-          max-width: 1000px;
-          margin: 0 auto;
-          padding: 40px 20px;
-        }
-    
-        section h2 {
-          font-size: 24px;
-        }
-    
-        hr {
-          margin: 12px 0;
-        }
-    
-        /* 푸터 */
-        footer {
-          background-color: #f1f1f1;
-          padding: 40px 20px;
-          font-size: 16px;
-        }
-    
-        footer .policy,
-        footer .shopinfo {
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-    
-        footer .address {
-          margin-top: 10px;
-        }
-    
-        footer dl {
-          margin: 10px 0;
-        }
-
-        main {
-          padding-top: 120px;
-        }
-
-      
-
-        /*전체 결제 페이지 레이아웃, reservation 페이지의 레이아웃과 동일하게 작성. main에 padding-top을 적용하였기 때문에 nav바 사이 거리가 있음. 나중에 수정해야 힘*/
-        .paymentarea {
-          background-color: #fff5eb;
-          /* 베이지 톤 고정 */
-          color: #305070;
-          /* 글자색 고정 */
-          max-width: 600px;
-          margin: 150px auto 50px auto;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .payment-main-title {
-          margin: 0px 0px 20px;
-          font-size: 1.5em;
-          text-align: center;
-
-        }
-
-        .payment-title {
-          margin: 15px;
-          font-size: 1.3em;
-          text-align: center;
-
-        }
-
-        /*각 섹션 별 레이아웃*/
-        .payment-info {
-          width: 100%;
-          padding: 5px;
-          border-bottom: 1px solid gray;
-          box-sizing: border-box;
-        }
-
-        /*예약자 정보*/
-
-        .payment-info li {
-          display: flex;
-          width: 100%;
-          height: 30px;
-          margin: 20px 0px;  
-        }
-
-        .payment-info label {
-          width: 80px;              /* label 폭 고정 (텍스트 길이에 따라 조정 가능) */
-          margin:0px 10px;       /* label과 input 사이 간격 */
-          text-align: center;
-          font-size: medium;
-        }
-        .payment-info span {
-          font-size: medium;
-
-        }
-        .payment-info input {
-          flex-basis: 100px;        /* 남은 공간을 input이 꽉 채움 */
-          padding: 5px;             /* input 내부 여백 */
-          border:0px;
-          box-sizing: border-box;   /* padding 포함해서 크기 계산 */
-        }
-
-
-      </style>
+     <!--css link -->
+  <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/payment_page.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
 </head>
 <body>
      <!-- 로그인 버튼 -->
@@ -184,16 +20,16 @@
   <header>
     <img class="logo" src="icon2.png" alt="icon">
     <nav class="navbar">
-      <a href="#">홈</a>
-      <a href="#">이용안내</a>
-      <a href="#">고객지원</a>
-      <a href="#">오시는길</a>
+      <a href="main.html">홈</a>
+      <a href="introduction.html">이용안내</a>
+      <a href="service.html">고객지원</a>
+      <a href="inform_rout.html">오시는길</a>
     </nav>
   </header>
 
         <!-- 메인 콘텐츠 영역 -->
         <main>
-            <div class="paymentarea">
+            <div class="information-box">
             <h2 class="payment-main-title">결제하기</h2>
             <h2 class="payment-title">예약자 정보</h2>
             <section class="payment-info">

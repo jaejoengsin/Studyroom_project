@@ -1,0 +1,171 @@
+       
+        section h2 {
+            font-size: 24px;
+          }
+      
+          hr {
+            margin: 12px 0;
+          }
+      
+          main {
+              padding-top: 120px;
+          }
+          /*메인 영역*/
+          .main-first-visible {
+              width: 100%;
+              box-sizing: border-box;
+              margin: 0 auto;
+              height: 500px;
+              position: relative;
+              overflow: hidden;
+          }
+  
+          
+          
+          .main-first-visible-bgd{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            background-image: url("icon.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1000px 500px;
+              
+  
+  
+          }
+  
+          .main-introduce {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 250px;
+            align-items: center;
+          }
+  
+          .main-introduce div {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            position:absolute;
+            text-align: center;
+            font-family: 'batang';
+            font-weight: bold;
+          }
+  
+  
+          .logo-between {
+            width: 100px;
+            height: 50px;
+            padding-top: 20px;
+            margin: 0 auto;
+       
+          }
+  
+          /*content1 area. 룸 정보 슬라이드, 간단한 소개 등 포함*/
+          .content01 {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 1000px;
+            background-color: #fff5eb;
+            font-family:'batang';
+  
+          }
+  
+          .content01 .explainarea {
+            position: relative;
+            width: 100%;
+            height:240px;
+            padding: 0 15px;
+            box-sizing: border-box;
+           
+            text-align: center;
+          }
+  
+  
+          .content01 .showarea {
+            display: block;
+            position: relative;
+            padding-top: 20px;
+            width: 100%;
+            height: 430px;
+          }
+  
+    
+  
+          .content01 .show-box {
+            display: block;
+            position: absolute;
+            width: 430px;
+            height: 100%;
+            left:50%;
+            margin-left: -200px;
+            /*background-color: aqua;*/
+          }
+  
+  
+          .content01 .button-area {
+            float:left;
+            width: 15%;
+            height: 100%;
+            /*background-color: red;*/
+  
+          }
+  
+          .content01 .showbutton-prev {
+            position: absolute;
+            width:60px;
+            height:60px;
+            top:50%;
+            margin-top:-30px;
+            border: 0;
+            background-image:url("../../icons/free-icon-back-button-7893865.png");
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-size: contain;
+          }
+  
+          .content01 .showslide-list {
+            float: left;
+            width: 70%;
+            height: 100%;
+          }
+  
+          .content01 .showslide-image {
+            height: 65%;
+            width: 100%;
+            background-image: url("../../images/room601.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+  
+  
+          }
+  
+          .content01 .showslide-txt {
+            height: 35%;
+            width: 100%;
+            padding:5px ;
+            box-sizing: border-box;
+           
+          }
+  
+  
+  
+          .content01 .showbutton-next {
+            position: absolute;
+            width:60px;
+            height:60px;
+            top:50%;
+            margin-top:-30px;
+            background-image: url("../../icons/free-icon-next-button-7893857.png");
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: 0;
+            background-size: contain;
+  
+          }
+  
+  
+  

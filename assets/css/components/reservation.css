@@ -1,0 +1,67 @@
+
+  /* 섹션별 */
+
+  .login-btn:hover {
+    color: skyblue;
+    text-decoration: underline;
+  }
+
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  .section label,
+  .section h3 {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  /* 시간 선택 */
+  .time-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+  }
+
+  .time-slot {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 5px;
+    min-width: 70px;
+    text-align: center;
+  }
+
+  .time-slot:hover {
+    background: #e0e0e0;
+  }
+
+  .selected-time {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  /* 버튼 */
+  button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #305070;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #203040;
+  }

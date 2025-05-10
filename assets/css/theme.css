@@ -1,0 +1,37 @@
+/* 낮 시간 테마 (아이보리/화사한 테마) */
+.daytime {
+    background-color: #fff5eb;
+    color: #305070;
+  }
+
+  .daytime header {
+    background-color: #fff5eb;
+  }
+
+  .daytime nav.navbar {
+    background-color: #305070;
+  }
+
+  .daytime footer {
+    background-color: #f1f1f1;
+    color: #305070;
+  }
+
+  /* 밤 시간 테마 (남색/회색 테마) */
+  .nighttime {
+    background-color: #2f3b4c;
+    color: #e0e0e0;
+  }
+
+  .nighttime header {
+    background-color: #3a4d64;
+  }
+
+  .nighttime nav.navbar {
+    background-color: #2f3b4c;
+  }
+
+  .nighttime footer {
+    background-color: #212b34;
+    color: #e0e0e0;
+  }

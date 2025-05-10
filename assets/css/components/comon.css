@@ -1,0 +1,42 @@
+    /* 로그인 버튼 */
+    .login-btn {
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        font-size: 16px;
+        text-decoration: none;
+        color: #305070;
+        background: none;
+        border: none;
+        z-index: 1001;
+      }
+  
+  
+      /* 로고 이미지 */
+      .logo {
+        width: 160px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+
+
+      /*결제, 예약 페이지에서 쓰이는 컴포넌트*/
+       /* 메인 전체 박스 */
+ .information-box {
+    background-color: #fff5eb;
+    /* 베이지 톤 고정 */
+    color: #305070;
+    /* 글자색 고정 */
+    max-width: 600px;
+    margin: 150px auto 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .information-box h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }

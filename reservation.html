@@ -5,188 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>웹프 스터디룸 예약</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* 로그인 버튼 */
-    .login-btn {
-      position: fixed;
-      top: 10px;
-      right: 20px;
-      font-size: 16px;
-      text-decoration: none;
-      color: #305070;
-      background: none;
-      border: none;
-      z-index: 1001;
-    }
-
-    .login-btn:hover {
-      color: skyblue;
-      text-decoration: underline;
-    }
-
-    /* 헤더 */
-    header {
-      background-color: #fff5eb;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      text-align: center;
-      padding-top: 10px;
-      transition: background-color 0.3s ease;
-    }
-
-    .logo {
-      width: 160px;
-      height: auto;
-      margin: 0 auto;
-    }
-
-    /* 네비게이션 */
-    nav.navbar {
-      background-color: #305070;
-      color: #fff5eb;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
-    }
-
-    nav.navbar a {
-      margin: 0 30px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #fff5eb;
-      transition: color 0.3s, text-decoration 0.3s;
-    }
-
-    nav.navbar a:hover {
-      color: #ffeb3b;
-      text-decoration: underline;
-    }
-
-    /* 메인 전체 박스 */
-    .reservation-box {
-      background-color: #fff5eb;
-      /* 베이지 톤 고정 */
-      color: #305070;
-      /* 글자색 고정 */
-      max-width: 600px;
-      margin: 150px auto 50px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .reservation-box h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-
-    /* 섹션별 */
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .section label,
-    .section h3 {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    /* 시간 선택 */
-    .time-container {
-      display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      border: 1px solid #ccc;
-      padding: 10px;
-      background: white;
-      border-radius: 5px;
-    }
-
-    .time-slot {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #f9f9f9;
-      padding: 10px;
-      margin: 5px;
-      min-width: 70px;
-      text-align: center;
-    }
-
-    .time-slot:hover {
-      background: #e0e0e0;
-    }
-
-    .selected-time {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    /* 버튼 */
-    button {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      background-color: #305070;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #203040;
-    }
-
-    /* 푸터 */
-    footer {
-      background-color: #f1f1f1;
-      padding: 40px 20px;
-      font-size: 16px;
-    }
-
-    footer .policy,
-    footer .shopinfo {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    footer .address {
-      margin-top: 10px;
-    }
-
-    footer dl {
-      margin: 10px 0;
-    }
-
-    /* 테마 설정 */
-    .daytime {
-      background-color: #fff5eb;
-      color: #305070;
-    }
-
-    .nighttime {
-      background-color: #2f3b4c;
-      color: #e0e0e0;
-    }
-  </style>
+  <!--css link -->
+  <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/reservation.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
 </head>
-
 <body>
 
   <a class="login-btn" href="login.html">log in</a>
@@ -194,15 +19,15 @@
   <header>
     <img class="logo" src="icon2.png" alt="icon">
     <nav class="navbar">
-      <a href="#">홈</a>
-      <a href="#">이용안내</a>
-      <a href="#">고객지원</a>
-      <a href="#">오시는길</a>
+      <a href="main.html">홈</a>
+      <a href="introduction.html">이용안내</a>
+      <a href="service.html">고객지원</a>
+      <a href="inform_rout.html">오시는길</a>
     </nav>
   </header>
 
   <main>
-    <div class="reservation-box">
+    <div class="information-box">
       <h2>예약하기</h2>
 
       <div class="section">
@@ -247,7 +72,7 @@
         <p>총 금액: <span id="total-price">5000</span>원</p>
       </div>
 
-      <button onclick="location.href='payment.html'">예약하기</button>
+      <button onclick="location.href='payment_page.html'">예약하기</button>
     </div>
   </main>
 

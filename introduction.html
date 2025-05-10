@@ -3,124 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>이용안내 | 웹프스터디룸</title>
+    <!--css link -->
+    <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/components/introduction.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+
   <style>
-    body {
-      font-family: sans-serif;
-      font-size: 18px;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-    }
+  
+   
 
-    /* 헤더 */
-    header {
-      background-color: #f4f4f4;
-      padding: 20px 0;
-      text-align: center;
-    }
+    
 
-    .login-btn {
-      position: absolute;
-      right: 20px;
-      top: 30px;
-      padding: 8px 16px;
-      font-size: 16px;
-      text-decoration: none;
-      border: 1px solid #333;
-      border-radius: 4px;
-    }
-
-    .header-inner {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .header-inner h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    /* 네비게이션 바 */
-    nav.navbar {
-      background-color: #ddd;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav.navbar a {
-      margin: 0 30px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #000;
-    }
-
-    /* 본문 */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .image-container {
-      position: relative;
-      text-align: center;
-    }
-
-    .image-container img {
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-    }
-
-    .room-btn {
-      position: absolute;
-      padding: 4px 8px;
-      font-size: 14px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border: 1px solid #333;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    /* 버튼 위치 */
-    .btn-601 { top: 15%; left: 86%; }
-    .btn-602 { top: 19%; left: 65%; } /* 위치 조정된 602호 버튼 */
-    .btn-603 { top: 65%; left: 62%; }
-    .btn-604 { top: 19%; left: 43%; }
-    .btn-605 { top: 62%; left: 35%; }
-    .btn-606 { top: 17%; left: 8%; }
-
-    /* 설명 영역 */
-    section {
-      margin-top: 80px;
-    }
-
-    section h3 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 8px;
-    }
-
-    /* 푸터 */
-    footer {
-      background-color: #f1f1f1;
-      padding: 40px 20px;
-      font-size: 16px;
-    }
-
-    footer .policy,
-    footer .shopinfo {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    footer .address {
-      margin-top: 10px;
-    }
-
-    footer dl {
-      margin: 10px 0;
-    }
+   
   </style>
 </head>
 <body>
@@ -135,10 +31,10 @@
 
   <!-- 네비게이션 바 -->
   <nav class="navbar">
-    <a href="index.html">홈</a>
-    <a href="guide.html">이용안내</a>
-    <a href="support.html">고객지원</a>
-    <a href="location.html">오시는길</a>
+    <a href="main.html">홈</a>
+      <a href="introduction.html">이용안내</a>
+      <a href="service.html">고객지원</a>
+      <a href="inform_rout.html">오시는길</a>
   </nav>
 
   <!-- 본문 -->
@@ -148,7 +44,7 @@
 
     <!-- 좌석 배치도 -->
     <div class="image-container">
-      <img src="StudyRoomImage.jpg" alt="스터디룸 좌석 배치도">
+      <img src="assets/images/room601.png" alt="스터디룸 좌석 배치도">
 
       <!-- 버튼 -->
       <a class="room-btn btn-601" href="#room601">601호</a>

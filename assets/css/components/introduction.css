@@ -1,0 +1,39 @@
+
+.image-container {
+    position: relative;
+    text-align: center;
+  }
+
+  .image-container img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+  }
+
+  .room-btn {
+    position: absolute;
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* 버튼 위치 */
+  .btn-601 { top: 15%; left: 86%; }
+  .btn-602 { top: 19%; left: 65%; } /* 위치 조정된 602호 버튼 */
+  .btn-603 { top: 65%; left: 62%; }
+  .btn-604 { top: 19%; left: 43%; }
+  .btn-605 { top: 62%; left: 35%; }
+  .btn-606 { top: 17%; left: 8%; }
+
+  /* 설명 영역 */
+  section {
+    margin-top: 80px;
+  }
+
+  section h3 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+  }
