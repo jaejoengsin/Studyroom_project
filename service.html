@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>웹프스터디룸</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* 로그인 버튼 */
+    .login-btn {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #305070;
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    /* 헤더 전체 */
+    header {
+      background-color: #fff5eb;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+      padding-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* 로고 이미지 */
+    .logo {
+      width: 160px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* 네비게이션 바 - 플렉스 레이아웃 */
+    nav.navbar {
+      background-color: #305070;
+      color: #fff5eb;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center; /* 중앙 정렬 */
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.navbar a {
+      margin: 0 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff5eb;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    nav.navbar a:hover {
+      color: #ffeb3b; /* 마우스 오버 시 노란색 */
+      text-decoration: underline;
+    }
+
+    /* 본문 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 120px 20px 40px 20px; /* 네비게이션 바 아래로 여백 추가 */
+      transition: background-color 0.3s ease;
+    }
+
+    section h2 {
+      font-size: 24px;
+    }
+
+    hr {
+      margin: 12px 0;
+    }
+
+    /* 본문 내 링크 스타일 */
+    a {
+      color: #fff; /* 기본 글씨를 흰색으로 */
+      text-decoration: none;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    a:hover {
+      color: #ffeb3b; /* 마우스 오버 시 노란색 */
+      text-decoration: underline;
+    }
+
+    /* 푸터 */
+    footer {
+      background-color: #f1f1f1;
+      padding: 40px 20px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    footer .policy,
+    footer .shopinfo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    footer .address {
+      margin-top: 10px;
+    }
+
+    footer dl {
+      margin: 10px 0;
+    }
+
+    /* 낮 시간 테마 (아이보리/화사한 테마) */
+    .daytime {
+      background-color: #fff5eb;
+      color: #305070;
+    }
+
+    .daytime header {
+      background-color: #fff5eb;
+    }
+
+    .daytime nav.navbar {
+      background-color: #305070;
+    }
+
+    .daytime footer {
+      background-color: #f1f1f1;
+      color: #305070;
+    }
+
+    /* 밤 시간 테마 (남색/회색 테마) */
+    .nighttime {
+      background-color: #2f3b4c;
+      color: #e0e0e0;
+    }
+
+    .nighttime header {
+      background-color: #3a4d64;
+    }
+
+    .nighttime nav.navbar {
+      background-color: #2f3b4c;
+    }
+
+    .nighttime footer {
+      background-color: #212b34;
+      color: #e0e0e0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 로그인 버튼 -->
+  <a class="login-btn" href="login.html">log in</a>
+
+  <!-- 헤더 -->
+  <header>
+    <img class="logo" src="icon2.png" alt="icon">
+    <nav class="navbar">
+      <a href="#">홈</a>
+      <a href="#">이용안내</a>
+      <a href="#">고객지원</a>
+      <a href="#">오시는길</a>
+    </nav>
+  </header>
+
+  <!-- 고객지원 제목 및 탭 -->
+  <div class="container">
+    <h2>고객지원</h2>
+
+    <!-- 상단 메뉴 -->
+    <nav style="margin-bottom: 30px;">
+      <a href="#notice" style="margin-right: 30px; font-weight: bold; text-decoration: none;">공지사항</a>
+      <a href="#faq" style="font-weight: bold; text-decoration: none;">FAQ</a>
+    </nav>
+
+    <!-- 공지사항 -->
+    <section id="notice">
+      <h3>공지사항</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#">공지 | 웹프 스터디룸 1 | 날짜 2025-04-06</a><hr></li>
+        <li><a href="#">공지 | 시스템 점검 안내 | 날짜 2025-04-03</a><hr></li>
+        <li><a href="#">공지 | 봄맞이 이벤트 오픈 | 날짜 2025-03-28</a><hr></li>
+        <li><a href="#">공지 | 이용 요금 변경 안내 | 날짜 2025-03-15</a><hr></li>
+        <li><a href="#">공지 | 명절 휴무 안내 | 날짜 2025-02-05</a><hr></li>
+      </ul>
+
+      <!-- 페이지 번호 -->
+      <div style="margin-top: 20px;">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="margin-top: 40px;">
+      <h3>자주 묻는 질문 (FAQ)</h3>
+      <ol style="padding-left: 20px;">
+        <li><a href="faq1.html">예약은 어떻게 하나요?</a></li><hr>
+        <li><a href="faq2.html">취소 및 변경은 언제까지 가능한가요?</a></li><hr>
+        <li><a href="faq3.html">예약을 변경하고 싶은데 어떻게 해야 하나요?</a></li><hr>
+        <li><a href="faq4.html">음식물 반입이 가능한가요?</a></li><hr>
+      </ol>
+    </section>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="policy">
+      <ul></ul>
+      <p class="address">
+        경기대 수원캠퍼스 웹프 스터디룸<br>
+        사업자명 : <br>
+        사업자등록번호 : <br>
+        개인정보보호관리 : k<br>    
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
+
+  <script>
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
+
+      if (isDaytime) {
+        document.body.classList.add('daytime');
+        document.body.classList.remove('nighttime');
+      } else {
+        document.body.classList.add('nighttime');
+        document.body.classList.remove('daytime');
+      }
+    }
+
+    // 페이지 로드 시 테마 적용
+    updateTheme();
+
+    // 1시간마다 테마 업데이트
+    setInterval(updateTheme, 60 * 60 * 1000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹프 스터디룸 예약</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* 로그인 버튼 */
+    .login-btn {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #305070;
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    .login-btn:hover {
+      color: skyblue;
+      text-decoration: underline;
+    }
+
+    /* 헤더 */
+    header {
+      background-color: #fff5eb;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+      padding-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* 네비게이션 */
+    nav.navbar {
+      background-color: #305070;
+      color: #fff5eb;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.navbar a {
+      margin: 0 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff5eb;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    nav.navbar a:hover {
+      color: #ffeb3b;
+      text-decoration: underline;
+    }
+
+    /* 메인 전체 박스 */
+    .reservation-box {
+      background-color: #fff5eb;
+      /* 베이지 톤 고정 */
+      color: #305070;
+      /* 글자색 고정 */
+      max-width: 600px;
+      margin: 150px auto 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .reservation-box h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    /* 섹션별 */
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section label,
+    .section h3 {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* 시간 선택 */
+    .time-container {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    .time-slot {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
+      padding: 10px;
+      margin: 5px;
+      min-width: 70px;
+      text-align: center;
+    }
+
+    .time-slot:hover {
+      background: #e0e0e0;
+    }
+
+    .selected-time {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* 버튼 */
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #305070;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #203040;
+    }
+
+    /* 푸터 */
+    footer {
+      background-color: #f1f1f1;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
+
+    footer .policy,
+    footer .shopinfo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    footer .address {
+      margin-top: 10px;
+    }
+
+    footer dl {
+      margin: 10px 0;
+    }
+
+    /* 테마 설정 */
+    .daytime {
+      background-color: #fff5eb;
+      color: #305070;
+    }
+
+    .nighttime {
+      background-color: #2f3b4c;
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="login-btn" href="login.html">log in</a>
+
+  <header>
+    <img class="logo" src="icon2.png" alt="icon">
+    <nav class="navbar">
+      <a href="#">홈</a>
+      <a href="#">이용안내</a>
+      <a href="#">고객지원</a>
+      <a href="#">오시는길</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="reservation-box">
+      <h2>예약하기</h2>
+
+      <div class="section">
+        <label for="date">날짜 선택:</label>
+        <input type="date" id="date" onchange="updateSelectedDate()">
+      </div>
+
+      <div class="section">
+        <h3>시간 선택 (2시간 단위)</h3>
+        <div class="time-container" id="timeContainer"></div>
+      </div>
+
+      <div class="section">
+        <h3>스터디룸 선택</h3>
+        <label for="studyroom">스터디룸 선택:
+          <select id="studyroom" onchange="updateSelectedStudyRoom()">
+            <option value="">스터디룸 선택</option>
+            <option value="601호">601호</option>
+            <option value="602호">602호</option>
+            <option value="603호">603호</option>
+            <option value="604호">604호</option>
+            <option value="605호">605호</option>
+            <option value="606호">606호</option>
+            <option value="607호">607호</option>
+            <option value="608호">608호</option></label>
+        </select>
+      </div>
+      <hr>
+      <div class="section">
+        <h3>선택한 예약 정보</h3>
+        <p>선택한 날짜: <span id="selected-date">-</span></p>
+        <p>선택한 시간: <span id="selected-time">-</span></p>
+        <p>선택한 스터디룸: <span id="selected-studyroom">-</span></p>
+      </div>
+
+      <div class="section">
+        <label for="people">인원 선택:
+          <input type="number" id="people" value="1" min="1" max="10" onchange="updateTotalPrice()"></label>
+      </div>
+
+      <div class="section">
+        <p>총 금액: <span id="total-price">5000</span>원</p>
+      </div>
+
+      <button onclick="location.href='payment.html'">예약하기</button>
+    </div>
+  </main>
+
+  <footer> //여기서부터
+    <div class="policy">
+      <p class="address">
+        스터디룸 : Insight Room<br>
+        사업자명 : 최재정, 박예원<br>
+        사업자등록번호 : 202015497-202311694<br>
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
+
+  <script>
+    // 테마 변경
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isDaytime = hour >= 6 && hour < 18;
+      if (isDaytime) {
+        document.body.classList.add('daytime');
+        document.body.classList.remove('nighttime');
+      } else {
+        document.body.classList.add('nighttime');
+        document.body.classList.remove('daytime');
+      }
+    }
+
+    updateTheme();
+    setInterval(updateTheme, 60 * 60 * 1000); 
+
+
+    // 예약 기능
+    const timeContainer = document.getElementById("timeContainer");
+    const selectedTimeSpan = document.getElementById("selected-time");
+    const selectedDateSpan = document.getElementById("selected-date");
+    const totalPriceSpan = document.getElementById("total-price");
+    const peopleInput = document.getElementById("people");
+    let selectedTime = null;
+    const basePrice = 5000;
+
+    function generateTimeSlots() {
+      for (let hour = 0; hour < 24; hour++) {
+        for (let min = 0; min < 60; min += 30) {
+          const startTime = `${hour.toString().padStart(2, '0')}:${min.toString().padStart(2, '0')}`;
+          const slot = document.createElement("div");
+          slot.classList.add("time-slot");
+          slot.textContent = startTime;
+          slot.dataset.time = startTime;
+          slot.onclick = () => selectTime(slot);
+          timeContainer.appendChild(slot);
+        }
+      }
+    }
+
+    function selectTime(slot) {
+      document.querySelectorAll(".time-slot").forEach(el => el.classList.remove("selected-time"));
+      let startTime = slot.dataset.time;
+      let [hour, min] = startTime.split(":").map(Number);
+      let endHour = (hour + 2) % 24;
+      let endTime = `${endHour.toString().padStart(2, '0')}:${min.toString().padStart(2, '0')}`;
+
+      selectedTime = `${startTime} ~ ${endTime}`;
+      selectedTimeSpan.textContent = selectedTime;
+      slot.classList.add("selected-time");
+      updateTotalPrice();
+    }
+
+    function updateSelectedDate() {
+      selectedDateSpan.textContent = document.getElementById("date").value;
+    }
+
+    function updateSelectedStudyRoom() {
+      const studyroomSelect = document.getElementById("studyroom");
+      const selectedRoom = studyroomSelect.value;
+      document.getElementById("selected-studyroom").textContent = selectedRoom || "-";
+    }
+
+    function updateTotalPrice() {
+      const peopleCount = parseInt(peopleInput.value) || 1;
+      totalPriceSpan.textContent = (basePrice * peopleCount).toLocaleString();
+    }
+
+    generateTimeSlots();
+  </script>
+
+</body>
+
+</html>
