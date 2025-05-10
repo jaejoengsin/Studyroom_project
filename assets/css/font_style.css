@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@396&display=swap');
+
+
+
+
+
+
+@font-face {
+    font-family: 'batang'; 
+    src: url('../fonts/Eulyoo_font_201204/Eulyoo1945-Regular.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
+
+
+
+.batang {
+    font-family: 'batang';
+
+}
+
+  
+.Oswald {
+    font-family: 'Oswald';
+}
