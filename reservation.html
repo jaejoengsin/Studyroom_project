@@ -58,9 +58,9 @@
       <hr>
       <div class="section">
         <h3>선택한 예약 정보</h3>
-        <p>선택한 날짜: <span id="selected-date">-</span></p>
-        <p>선택한 시간: <span id="selected-time">-</span></p>
-        <p>선택한 스터디룸: <span id="selected-studyroom">-</span></p>
+        <p>선택한 날짜: <span id="selected-date"></span></p>
+        <p>선택한 시간: <span id="selected-time"></span></p>
+        <p>선택한 스터디룸: <span id="selected-studyroom"></span></p>
       </div>
 
       <div class="section">
@@ -69,10 +69,12 @@
       </div>
 
       <div class="section">
-        <p>총 금액: <span id="total-price">5000</span>원</p>
+        <p>총 금액: <span id="total-price"></span>원</p>
       </div>
 
-      <button onclick="location.href='payment_page.html'">예약하기</button>
+      <!-- <button onclick="location.href='payment_page.html'">예약하기</button> -->
+      <button id="paymentLinkButton">예약하기</button>
+
     </div>
   </main>
 
@@ -165,8 +167,33 @@
       const peopleCount = parseInt(peopleInput.value) || 1;
       totalPriceSpan.textContent = (basePrice * peopleCount).toLocaleString();
     }
-
     generateTimeSlots();
+    const userReservationData = {};
+    
+    /*결제 페이지와 연동을 위해 제가 일단 추가했습니다.*/
+    function saveData () {
+     
+      /*맨 위에 작성한 선언 및 초기화 코드를 사용 가능하나 일단 따로 작성하였습니다*/
+     userReservationData["date"]=document.getElementById("selected-date").textContent; 
+     userReservationData["time"]=document.getElementById("selected-time").textContent; 
+     userReservationData["studyRoom"]=document.getElementById("selected-studyroom").textContent; 
+     userReservationData["people"]=document.getElementById("people").value; 
+     userReservationData["totalPrice"]=document.getElementById("total-price").textContent; 
+     for (const key in userReservationData) {
+      console.log(userReservationData[key]);
+       if(userReservationData[key]=="") {
+        alert(`${key}가 입력되지 않았습니다`);
+        return;
+       }
+     }
+     localStorage.setItem("userReservationData",JSON.stringify(userReservationData));
+     window.location.href="payment_page.html";
+    }
+ 
+    let paymentLinkButton = document.getElementById("paymentLinkButton");
+    paymentLinkButton.addEventListener('click', () => saveData());
+    /*여기까지*/
+    
   </script>
 
 </body>

@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
     <link rel="stylesheet" href="assets/css/components/main.css" type="text/css">
     <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+
+    <style>
+      .main {
+        padding-top: 120px;
+      }
+    </style>
 </head>
 
 
@@ -63,10 +69,8 @@
 
               </div>
               <div class="showslide-txt">
-                <div style="border: 0.5px solid black ;">
-                <p style="text-align: center;"><b>Room 603</b></p>
+                <p><b>Room 603</b></p>
                 <p>회의에 적합한 강의실</p>
-                </div>
               </div>
             </div>
             <div class="button-area">
@@ -76,52 +80,26 @@
           </div>
         </section>
         
-
-
-
-
-
-
-        <!-- 각 페이지별 개별 콘텐츠가 들어가는 부분 -->
-         <section class ="introduce-room">
-            <div class="introduce-img">
-        <!--화면 메인 이미지-->
-        <figure>
-            <img src="assets/images/Photo_style._A_clean,_well-lit,_and_spacious_study.jpg" 
-            alt="스터디룸 메인 이미지">
-            <figcaption>쾌적하고 조용한 공간에서 원하는 업무를 자유롭게</figcaption>
-        </figure>
-        </div>
-        <div class="introduce-text">
-            <h2>나는 스터디룸입니다</h2>
-            <p>스터디룸이니까요</p>
-        </div>
-        <!--화면을 좌우로 스크롤 하며 간략하게 사용자가 룸 내부 모습을 알 수 있게 해주는 영역, 확정은 아님-->
-        <div class="other_rooms">
-            <div clsss="slice">
-                <div class="slice1"><img></div>
-                <div class="slice2"><img></div>
-                <div class="slice3"><img></div>
-                <div class="slice4"><img></div>
-            </div>
-        </div>
-        </section>
         <!--공지사항 페이지에서 일부 데이터를 가져와 노출, more info는 더보기 링크로 공지사항 페이지로 연결됨-->
-        <section class="announce">
-            <h2>공지사항</h2>
-            <div class ="link_support"><a href="support.html">more info</a></div>
-            <ul>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-            </ul>
-        </section>
+        <section class="content02">
+          <h2 class="headline"><b>공지사항</b></h2>
+          <div class ="addtional-link"><a href="service.html">more info</a></div>
+          <ul class="announce">
+              <li><a>adsfsadfdsaf</a></li>
+              <li><a>asdfasfdsafasdf</a></li>
+              <li><a>asdfsafsdafsadf</a></li>
+              <li><a>asdfsafsadfasfsda</a></li>
+          </ul>
+       
         <!--이벤트 페이지-->
-        <section class="event">
-            
+          <h2 class="headline">현재 진행중인 이벤트</h2>
+            <ul class="announce">
+            <li><a>adsfsadfdsaf</a></li>
+            <li><a>asdfasfdsafasdf</a></li>
+            <li><a>asdfsafsdafsadf</a></li>
+            <li><a>asdfsafsadfasfsda</a></li>
+         </ul>
         </section>
-
 
     </main>
 
@@ -147,6 +125,43 @@
               </dl>
             </div>
           </footer>
-    <script src="script.js"></script>
+    <script>
+      const slides = [
+      { image: "assets/images/room601.png", roomNum: "Room 603", description: "회의에 적합한 강의실" },
+      { image: "assets/images/Photo_style._A_modern_indoor_entrance_to_a_study_r.jpg", roomNum: "Room 604", description: "스터디용 강의실" },
+      { image: "assets/images/Photo_style._A_Google_Maps-style_map_view_of_a_sto.jpg", roomNum: "Room 605", description: "어쩌구 저쩌구하는 강의실" }
+      ];
+    
+      let currentIndex = 0;
+      let prevButton = document.querySelector('.content01 .showbutton-prev');
+      let nextButton = document.querySelector('.content01 .showbutton-next');
+      let slideImage = document.querySelector('.content01 .showslide-image');
+      let slideTextBox = document.querySelector('.content01 .showslide-txt');
+      let slideText = slideTextBox.querySelectorAll('p');
+
+      function changeContent (flag) {
+        currentIndex=(currentIndex+flag);
+        if(currentIndex<0){
+          currentIndex = slides.length-1;
+        }
+        else {
+          currentIndex %= slides.length;
+        }
+        slideImage.style.backgroundImage=`url('${slides[currentIndex].image}')`;
+        slideText[0].textContent = `${slides[currentIndex].roomNum}`;
+        slideText[1].textContent = `${slides[currentIndex].description}`;
+        
+      }
+
+      prevButton.addEventListener('click', () => changeContent(-1));
+      nextButton.addEventListener('click', () => changeContent(1));
+
+  
+
+    </script>
+
+
+
+   
 </body>
 </html>

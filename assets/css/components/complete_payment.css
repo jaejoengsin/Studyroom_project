@@ -1,0 +1,37 @@
+
+
+ul {
+    padding:0;
+    margin:0;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+.reservation-info {
+    width: 100%;
+    margin-top:30px;
+    padding: 0 10px;
+    box-sizing:border-box;
+}
+
+.reservation-info ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.reservation-info li {
+    display: flex;
+    padding-bottom: 8px;
+}
+
+.reservation-info  li span {
+    flex-basis: 100px;
+    text-align: center;
+
+
+}

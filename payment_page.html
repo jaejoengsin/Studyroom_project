@@ -39,8 +39,8 @@
                     <ul>
                     <li><label for="name">성함</label>
                         <input id="name" type="text" name="name" required></li>
-                    <li><label for="account">연락처</label>
-                        <input id="account" type="text" name="account" required></li>
+                    <li><label for="acount">연락처</label>
+                        <input id="acount" type="text" name="account" required></li>
                     <li><label for="mail">이메일</label>
                         <input id="mail" type="text" name="mail" required></li>
                     <li><label for="purpose">사용 목적</label>
@@ -52,41 +52,26 @@
                 <form>
                     <ul>
                     <!--예약 페이지에서 입력한 데이터를 가져올 것 같음(아마 자바스크립트로?)-->
-                    <li><label>예약 날짜</label><span id="#">| 2025-05-02</span></li>
-                    <li><label>room</label><span id="#">| 605호</span></li>
-                    <li><label>시간</label><span id="#">| 00:30 ~ 02:30</span></li>
-                    <li><label>인원</label><span id="#">| 5명</span></li>
-                    <li><label>결제 금액</label><span id="#">| 10,000원</span></li>
+                    <li><label>예약 날짜</label><span id="date"></span></li>
+                    <li><label>room</label><span id="studyRoom"></span></li>
+                    <li><label>시간</label><span id="time"></span></li>
+                    <li><label>인원</label><span id="people"></span></li>
+                    <li><label>결제 금액</label><span id="total-price"></span></li>
                 </form>
             </section>
             <!--포인트(혹은 쿠폰...?) 사용 페이지 가능하면 추가-->
             <h2 class="payment-title">결제 수단</h2>
-            <section class="pay-method">
-                <form>
-                    <ul class="pay-method">
-                        <li><label for="naver"><input id="naver" type="radio" name="pay_method"></label></li>
-                        <li><label for="kakao"><input id="kakao" type="radio" name="pay_method"></label></li>
-                        <li><label for="card"><input id="card" type="radio" name="pay_method"></label></li>
-                        <li><label for="phone"><input id="phone" type="radio" name="pay_method"></label></li>
-                        <li><label for="bankbook"><input id="bankbook" type="radio" name="pay_method"></label></li>
-                    </ul>
-
-                </form>
-            </section>
-            <section class="conditions">
-                <div class="conditions">
-                <h3>이용안내 및 약관</h3>
-                <p>안내 내용</p>
-                <input id="checkbox" type="checkbox"><label for="checkbox">동의</label><!--버튼을 눌러 동의를 구하는 것까지 (구현은 가능하지만)필요한지 모르겠음-->
-                </div>
+            <section class="pay-method">               
+              <ul>
+                  <li>네이버 페이</li>
+                  <li>카카오 페이</li>
+                  <li>신용/체크카드</li>
+                  <li>핸드폰 결제</li>
+                  <li>무통장 입금</li>
+              </ul>
             </section>
             <section class="pay">
-                <div class="pay">
-                    <!--결제하기 옆에 "데이터 금액 추가"기능 나중에 구현-->
-                    <!--자바스크립트로 추가 작업을 할 수도 있을지도 몰라서 일단 button으로 구현(onclick이 버튼 누르면 자바스크립트 처리 후 입력한 페이지로 이동)
-                    아니라면, <a>로 변경할수도...-->
-                    <button type="submit" onclick="location.href='complete_payment_page.html'"><span id="acount"></span>결제하기</button>
-                </div>
+                   <button id="complete_paymentLinkButton">결제하기</button>
             </section>
         </div>
         </main>
@@ -104,7 +89,7 @@
             </div>
             <div class="shopinfo">
               <dl>
-                <dt>모임공간 운영시간 :</dt>
+                <dt>모임공간 운영시간 :</dt> 
                 <dd><strong>365일 24시간</strong> 이용가능</dd>
               </dl>
               <dl>
@@ -113,6 +98,47 @@
               </dl>
             </div>
           </footer>
+          <script>
+            const userData = {};
+            function saveUserData () {
+              
+              userData["name"] = document.getElementById("name").value;
+              userData["acount"] = document.getElementById("acount").value;
+              userData["mail"] = document.getElementById("mail").value;
+              userData["purpose"] = document.getElementById("purpose").value;
+              for (const key in userData) {
+                console.log(userData[key]);
+                if(userData[key]=="") {
+                  alert(`${key}가 입력되지 않았습니다`);
+                  return;
+                }
+              }
+              localStorage.setItem("userData",JSON.stringify(userData));
+              window.location.href="complete_payment_page.html";
+            }
+
+
+
+            window.onload = function() {
+            const usedataStr = localStorage.getItem("userReservationData");
+            if (usedataStr != null) {
+              const usedata = JSON.parse(usedataStr);
+              document.getElementById("date").textContent = usedata["date"];
+              document.getElementById("time").textContent = usedata["time"];
+              document.getElementById("studyRoom").textContent = usedata["studyRoom"];
+              document.getElementById("people").textContent = usedata["people"];
+              document.getElementById("total-price").textContent = usedata["totalPrice"];
+            }
+            else {
+              alert("예약을 먼저 해주세요");
+            }
+          }
+
+           let complete_paymentLinkButton = document.getElementById("complete_paymentLinkButton");
+           complete_paymentLinkButton.addEventListener('click', () => saveUserData());
+
+          </script>
+
         
 
 </body>

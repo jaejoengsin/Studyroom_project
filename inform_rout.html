@@ -1,103 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>오시는길</title>
      <!--css link -->
      <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
      <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
      <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
      <link rel="stylesheet" href="assets/css/components/inform.css" type="text/css">
      <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+     <style>
+        main {
+            padding-top: 100px;
+        }
+     </style>
 </head>
 <body>
-    <!--메인에 헤더에 대한 설명 있음-->
-    <header class="#">
-        <h1 class="logo">
-            <a href="main.html"><img src="" alt="메인로고"></a>
-        </h1>
+          <!-- 로그인 버튼 -->
+  <a class="login-btn" href="login.html">log in</a>
 
-        <div class ="main-text">
-        <h2>스터디룸이름</h1>
-        <h3>소개:모두를 위한 공간</h2>
-        </div>
-
-        <div class="header-bottom">
-        <nav>
-            <ul>
-                <li><a href="index.html">홈</a></li>
-                <li><a href="#">오시는길</a></li>
-                <li><a href="reservation.html">예약</a></li>
-                <li><a href="mypage.html">이용안내</a></li>
-                <li><a href="support.html">고객지원</a></li>
-            </ul>
-        </nav>
-        </div>
-        <div class="header-right-login"><a></a></div>
-    </header>
+  <!-- 헤더 -->
+  <header>
+    <img class="logo" src="icon2.png" alt="icon">
+    <nav class="navbar">
+      <a href="main.html">홈</a>
+      <a href="introduction.html">이용안내</a>
+      <a href="service.html">고객지원</a>
+      <a href="inform_rout.html">오시는길</a>
+    </nav>
+  </header>
 
      <main>
         <!--작은 로고 이미지 메인의 맨 상단에 추가-->
-        <div class="studyroom-logo">
-            <img>
+        <div style="background-color: #fff5eb;">
+        <div class="body-logo"><img src="assets/images/icon.png"></div>
         </div>
-         <section class="main-inform">
+         <section class="info">
             <!--지도 이미지(임시) + 길 소개-->
-            <article class="map-info">
+            <article class="info-form">
+              <div>
                 <h2><b>오시는길</b></h2>
-                <img src="/assets/images/Photo_style._A_Google_Maps-style_map_view_of_a_sto.jpg" alt="스터디룸지도">
-                <p>간략한 길 소개</p>
-            </article>
-            <!--위치 파악에 도움이 될 수 있는 주변 정보와 주차정보, 추가해보고 과한 감이 있으면 삭제도 고려 가능-->
-            <article class="around-info">
-                <h2>주변 정보</h2>
+                <img src="assets/images/Photo_style._A_Google_Maps-style_map_view_of_a_sto.jpg" alt="스터디룸지도">
                 <ul>
-                    <li></li>
-                    <li></li>
+                  <li style="padding:0px;"><b>위치:</b> 경기도 수원시 영통구 광교산로 154-42</li>
+                  <li><b></b></li>
                 </ul>
-                <h2>주차 정보</h2>
-                <img>
-                <p></p>
-            </article>
-            <hr>
-            <!--입구사진(임시)-->
-            <article class="room-info">
+                </div>
+                <!--위치 파악에 도움이 될 수 있는 주변 정보-->
+                <div>
+                <h2><b>주변 정보</b></h2>
+                <ul>
+                    <li>ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</li>
+                    <li>ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</li>
+                    <li>ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</li>
+                    <li>ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</li>
+                </ul>
+                </div>
+                <div>
                 <h2>스터디룸 입구</h2>
-                <img src="/assets/images/Photo_style._A_modern_indoor_entrance_to_a_study_r.jpg" alt="스터디룸입구">
-            </article>
-            <!--입실 전 주의사항 안내. 고객지원 페이지의 내용 일부를 가져와서 노출 시킬 예정-->
-            <article class="notice">
-                <!--해당 리소스는 재활용될 여지가 있음-->
+                <!--입구사진(임시)-->
+                <img src="assets/images/Photo_style._A_modern_indoor_entrance_to_a_study_r.jpg" alt="스터디룸입구">  
+                </div>
+                <div>
                 <h2>입실 전 주의사항</h2>
-                <ol>
-                    <li>외부음료 반입 관련</li>
-                    <li>애완동물 출입 금지</li>
-                    <li>어쩌구저쩌구....</li>
-                </ol>
+                <ul style="text-align: left;">
+                    <li>외부음료 반입할 수 없습니다</li>
+                    <li>애완동물 출입은 금지합니다</li>
+                    <li>책상, 의자, 전자기기 등은 깨끗이 사용해 주세요.</li>
+                    <li>책상, 의자, 전자기기 등은 깨끗이 사용해 주세요.</li>
+                    <li>사용 후 쓰레기는 분리수거함에 버려주세요.</li>
+                    <li>사용 후 쓰레기는 분리수거함에 버려주세요.</li>
+                    <li>개인 소지품은 스스로 관리해 주세요. 분실 시 책임지지 않습니다.</li>
+                </ul>
+                </div>
             </article>
         </section>
         <!--가장 하단에는 바로 지도 플랫폼(네이버,구글 등)으로 이동하고 스터디룸의 주소를 해당 플랫폼에 보내서 바로 길 찾기가 가능하도록 함.-->
-        <section class="sharing-map">
-            <h2>지도 공유</h2>
+        <section class="mapLink">
             <ul>
-                <li><a href="플랫폼 주소+아무주소 쿼리값" target="_blank"><img src="" alt="네이버 지도"></a></li>
-                <li><a href="플랫폼 주소+아무주소 쿼리값" target="_blank"><img src="" alt="구글 지도"></a></li>
+                <li><a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90/place/11591483?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp" target="_blank"><img src="assets/icons/Map_Service_Icon.png" alt="네이버 지도"></a></li>
+                <li><a href="https://www.google.com/maps/place/%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90/data=!3m2!1e3!4b1!4m6!3m5!1s0x357b5c9c1e337b5b:0x437f7735e290ec4d!8m2!3d37.300485!4d127.035833!16zL20vMGJqNDlz?hl=ko&entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="assets/icons/icons8-google-maps-new-48.png" alt="구글 지도"></a></li>
             </ul>
         </section>
     </main>
 
-    <!-- 푸터 영역 -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 스터디룸 예약 시스템</p>
-            <ul>
-                <li><a href="about.html">사업체 소개</a></li>
-                <li><a href="support.html">고객지원</a></li>
-                <li><a href="map.html">오시는 길</a></li>
-            </ul>
-        </div>
-    </footer>
+        <!-- 푸터 영역 -->
+        <footer>
+            <div class="policy">
+              <ul></ul>
+              <p class="address">
+                경기대 수원캠퍼스 웹프 스터디룸<br>
+                사업자명 : <br>
+                사업자등록번호 : <br>
+                개인정보보호관리 : k<br>    
+              </p>
+            </div>
+            <div class="shopinfo">
+              <dl>
+                <dt>모임공간 운영시간 :</dt>
+                <dd><strong>365일 24시간</strong> 이용가능</dd>
+              </dl>
+              <dl>
+                <dt>예약상담시간 :</dt>
+                <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+              </dl>
+            </div>
+          </footer>
 
 </body>
 </html>
