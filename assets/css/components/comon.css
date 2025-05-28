@@ -14,9 +14,16 @@
   
       /* 로고 이미지 */
       .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+      }
+
+      .logo img {
+        display: block;
         width: 160px;
-        height: auto;
-        margin: 0 auto;
+        margin: auto 0;
       }
 
 
