@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>결제완료</title>
        <!--css link -->
        <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
        <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
@@ -35,16 +35,16 @@
          이렇게 정적으로 구조만 잡아놓고 나중에 수정-->
          <div class="reservation-info">
             <ul>
-                <li><span>예약자:</span> <span id="name"></span></li>
-                <li><span>연락처: </span><span id="acount"></span></li>
-                <li><span>이메일: </span><span id="email"></span></li>
-                <li><span>사용목적: </span><span id="purpose"></span></li>
-                <li><span>날짜: </span><span id="date"></span></li>
-                <li><span>시간: </span><span id="time"></span></li>
-                <li><span>방: </span><span id="studyroom"></span></li>
-                <li><span>인원: </span><span id="people"></span></li>
-                <li><span>결제수단: </span><span id="payment"></span></li>
-                <li><span>금액: </span><span id="total-price"></span></li>
+                <li><span>예약자</span> <span id="name"></span></li>
+                <li><span>연락처</span><span id="acount"></span></li>
+                <li><span>이메일</span><span id="email"></span></li>
+                <li><span>사용목적</span><span id="purpose"></span></li>
+                <li><span>날짜</span><span id="date"></span></li>
+                <li><span>시간</span><span id="time"></span></li>
+                <li><span>방</span><span id="studyRoom"></span></li>
+                <li><span>인원</span><span id="people"></span></li>
+                <li><span>결제수단</span><span id="payment"></span></li>
+                <li><span>금액</span><span id="totalPrice"></span></li>
             </ul>
          </div>
       </section>
@@ -76,7 +76,31 @@
             </div>
           </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+
+        window.onload = function() {
+            const userDataStr = localStorage.getItem("userData");
+            const useReserdataStr = localStorage.getItem("userReservationData");
+            if (userDataStr != null && useReserdataStr != null) {
+              const userData = JSON.parse(userDataStr);
+              const useReserdata = JSON.parse(useReserdataStr);
+              document.getElementById("name").textContent = userData["name"];
+              document.getElementById("acount").textContent = userData["acount"];
+              document.getElementById("email").textContent = userData["email"];
+              document.getElementById("purpose").textContent = userData["purpose"];
+              document.getElementById("payment").textContent = userData["payment"];
+              document.getElementById("date").textContent = useReserdata["date"];
+              document.getElementById("time").textContent = useReserdata["time"];
+              document.getElementById("studyRoom").textContent = useReserdata["studyRoom"];
+              document.getElementById("people").textContent = useReserdata["people"];
+              document.getElementById("totalPrice").textContent = useReserdata["totalPrice"];
+            }
+            else {
+              alert("질못된 페이지 로드입니다");
+            }
+          }
+    </script>
     
 </body>
 </html>

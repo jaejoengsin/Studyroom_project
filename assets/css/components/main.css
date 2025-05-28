@@ -10,29 +10,92 @@
         
           /*메인 영역*/
           .main-first-visible {
-              width: 100%;
-              box-sizing: border-box;
-              margin: 0 auto;
-              height: 500px;
-              position: relative;
-              overflow: hidden;
+          
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+           background-color: #fff5eb;
+            z-index: 1;
+        
           }
-  
+
+          
           
           
           .main-first-visible-bgd{
-            position: absolute;
-            width: 100%;
+            
+            width: 50%;
             height: 100%;
-            background-color: blue;
-            background-image: url("icon.png");
+            float: left;
+            z-index: 2;
+            background-image: url("../../images/main_img.png");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 1000px 500px;
+            background-size: 100% 100%;
               
   
   
           }
+
+
+
+          .main-first-visible-logo {
+            width: 25%;
+            height: 100%;
+            float: left;
+            z-index: 2;
+            background-image: url("../../images/icon.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto auto;
+
+          }
+
+            .main-first-visible-intro {
+            width: 25%;
+            height: 100%;
+            float: left;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+          }
+            .main-first-visible-intro h1{
+              font-family: 'batang';
+              font-weight: 200;
+            }
+
+            @media screen and (max-width: 767px) {
+              .main-first-visible {
+                height: auto;
+              }
+              .main-first-visible-bgd {
+               
+                width: 100%;
+                float:none;
+                height: 400px;
+              }
+              .main-first-visible-logo {
+                display: none;
+              }
+              .main-first-visible-intro {
+                width: 100%;
+                height: 100%;
+                float:none;
+              }
+              .main-first-visible-intro h1{
+                font-weight: 400;
+              }
+
+            
+
+            }
+
+  
   
           .main-introduce {
             display: flex;
@@ -105,20 +168,25 @@
   
   
           .content01 .button-area {
+            position: relative;
             float:left;
             width: 15%;
             height: 100%;
             /*background-color: red;*/
   
           }
+
+ 
   
           .content01 .showbutton-prev {
             position: absolute;
             width:60px;
             height:60px;
             top:50%;
-            margin:0;
+            left: 50%;
+            padding: 0;
             margin-top:-30px;
+            margin-left: -30px;
             border: 0;
             background-image:url("../../icons/free-icon-back-button-7893865.png");
             background-repeat: no-repeat;
@@ -141,6 +209,7 @@
           }
   
           .content01 .showslide-list {
+            position: relative;
             float: left;
             width: 70%;
             height: 100%;
@@ -165,6 +234,7 @@
             border-radius: 8px;
             box-sizing: border-box;
             text-align: center;
+            overflow-y: auto;
           }
   
   
@@ -173,9 +243,11 @@
             position: absolute;
             width:60px;
             height:60px;
+            padding: 0;
             top:50%;
-            margin:0;
-            margin-top:-30px;
+            left:50%;
+            margin-top: -30px;
+            margin-left: -30px;
             background-image: url("../../icons/free-icon-next-button-7893857.png");
             background-color: transparent;
             background-repeat: no-repeat;
@@ -198,15 +270,80 @@
 
           }
 
+          @media  (max-width:767px) {
+            .content01 .show-box {
+              width: 100%;
+              margin-left: -50%;
+            }
+
+            .content01 .button-area {
+              width: 20%;
+            }
+            .content01 .showslide-list {
+              width: 60%;
+            }
+            
+          }
+
+
+          .content02 {
+            position: relative;
+
+            width: 1440px;
+            margin:0 auto;
+            margin-top: 150px;
+            margin-bottom: 150px;
+            padding: 0 20px 0 20px;
+
+          
+
+            display: flex;
+            flex-wrap: wrap;
+            gap:50px;
+            overflow: hidden;
+            font-family: 'batang';
+
+          }
+
+          .content02 div {
+            flex: 1 1 0;
+
+            padding: 15px 10px ;
+            border:1px solid rgba(0, 0, 0, 0.3);
+            border-radius:20px;
+
+            text-align: center;
+
+          }
+
+           .content02 h3 {
+            margin-top:0;
+            padding-bottom: 3px;
+            border-bottom: 5px solid #fff5eb;
+           }
+
+           .content02 p {
+            margin: 0 ;
+            
+           }
+
+           @media  screen and (max-width:767px) {
+            .content02 {
+              width: auto;
+              flex-direction: column;
+              margin-top: 100px;
+            }
+           }
+
 
           /*두번재 콘텐츠(공지사항, 이벤트)*/
 
-          .content02 {
+          .content03 {
             position: relative;
             width: 960px;
             margin: 0 auto;
             overflow: hidden;
-            margin-top: 30px;
+            margin-top: 50px;
           }
 
           .headline {
@@ -223,6 +360,7 @@
             position:absolute;
             right:0;
             top:0;
+            padding-right: 10px;
           }
 
           .addtional-link a {
@@ -242,7 +380,9 @@
             margin:0;
             margin-bottom: 30px;
             padding:0;
-
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
 
           .announce li {
@@ -254,6 +394,21 @@
 
           .announce li:hover {
             text-decoration: underline;
+          }
+
+          @media screen and (max-width:767px) {
+            .content03 {
+              width: auto;
+              padding-left: 10px;
+              padding-right: 10px;
+             
+            }
+
+            .announce {
+              margin-bottom: 100px;
+            }
+
+            
           }
   
   

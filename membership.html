@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+    <title>스터디룸 예약 시스템</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 폰트링크 -->
+    <link rel="stylesheet" href="assets/css/font_style.css">
+    <!--css link -->
+    <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/components/membership.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+
+    <style>
+      .main {
+        padding-top: 120px;
+      }
+    </style>
+</head>
+
+
+<body>
+       <!-- 로그인 버튼 -->
+  <a class="login-btn" href="login.html">log in</a>
+
+  <!-- 헤더 -->
+  <header>
+    <img class="logo" src="assets/images/icon2.png" alt="icon">
+    <nav class="navbar">
+      <a href="main.html">홈</a>
+      <a href="introduction.html">이용안내</a>
+      <a href="service.html">고객지원</a>
+      <a href="inform_rout.html">오시는길</a>
+    </nav>
+
+    <style>
+        section {
+            padding-top: 150px;
+        }
+    </style>
+    
+  </header>
+
+    <section class="accession-box">
+        <h2>회원가입</h2>
+        <h3>회원정보 입력</h3>
+        <ul>
+            <li><span>이름</span><input type="text"></li>
+            <li><span>id</span><input type="text"></li>
+            <li><span>비밀번호</span><input type="text"></li>
+            <li><span>전화번호</span><input type="text"></li>
+            <li><span>생년월일</span><input type="text"></li>
+        </ul>
+        <div class="access-button" >
+          <button id="completeAccessionBotton">가입하기</button>
+        </div>
+    </section>
+
+     <!-- 푸터 영역 -->
+        <footer>
+            <div class="policy">
+              <ul></ul>
+              <p class="address">
+                경기대 수원캠퍼스 웹프 스터디룸<br>
+                사업자명 : <br>
+                사업자등록번호 : <br>
+                개인정보보호관리 : k<br>    
+              </p>
+            </div>
+            <div class="shopinfo">
+              <dl>
+                <dt>모임공간 운영시간 :</dt>
+                <dd><strong>365일 24시간</strong> 이용가능</dd>
+              </dl>
+              <dl>
+                <dt>예약상담시간 :</dt>
+                <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+              </dl>
+            </div>
+          </footer>
+
+          <script>
+             let completeAccessionBotton = document.getElementById("completeAccessionBotton");
+
+             function Fnext () {
+              alert("회원가입이 완료되었습니다!")
+              window.location.href="main.html";
+             }
+             completeAccessionBotton.addEventListener('click', () => Fnext());
+          </script>
+</body>

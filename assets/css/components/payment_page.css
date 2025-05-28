@@ -104,7 +104,7 @@ ul {
 
     background-color: white;
     
-    transition: transform 0.7s ease;
+   
   }
 
   .pay-method li:hover {
@@ -113,10 +113,17 @@ ul {
 
   }
 
-    .pay-method li:active {
-     border: 1px solid rgba(0, 0, 0, 0.5);
 
+
+  .pay-method input[type="radio"] {
+    display: none;
   }
+
+  .pay-method input[type="radio"]:checked + label{
+    font-weight: bolder;
+    font-size: 1.1em;
+  }
+
 
 
   .pay {
@@ -127,24 +134,34 @@ ul {
 
   .pay button {
     background-color: white;
+    padding: 12px 24px;   
 
-    padding: 12px 24px;        
-    border: none;                 
-    border-radius: 6px;            
+    border: 1px solid rgba(128,128,128,0.8);                 
+    border-radius: 6px;    
+
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;        
-    transition: transform 0.7s ease;     
+
+    cursor: pointer;       
+    
+    flex-basis: 200px;
   }
 
   .pay button:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
+    border: 1px solid rgba(0, 0, 0, 0.8);
 
   }
 
-.pay-button:active {
-  transform: scale(0.98);       
-}
+
+  @media  screen and (max-width:767px) {
+
+    .pay-method li {
+      flex-basis: 100%;
+    }
+    
+  }
+
 
 
 

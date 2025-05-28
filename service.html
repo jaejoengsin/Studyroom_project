@@ -117,6 +117,18 @@
   </footer>
 
   <script>
+    
+    const noticeData = document.getElementById("notice").querySelectorAll("ul li");
+    const faqData = document.getElementById("faq").querySelectorAll("ul li");
+
+    const noticeData_arr = Array.from(noticeData).map(li =>li.textContent);
+    const faqData_arr = Array.from(faqData).map(li =>li.textContent);
+
+    localStorage.setItem("noticeData_arr", JSON.stringify(noticeData_arr));
+    localStorage.setItem("faqData_arr", JSON.stringify(faqData_arr));
+
+
+
     function updateTheme() {
       const now = new Date();
       const hour = now.getHours();

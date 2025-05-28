@@ -40,3 +40,11 @@
     font-size: 28px;
     margin-bottom: 30px;
   }
+
+/*모바일 화면에서는 max-width를 좀 더 줄여서 화면에 너무 꽉 차지 않게 해봄*/
+  @media screen and (max-width:767px) {
+    .information-box {
+      max-width: 300px;
+    }
+    
+  }

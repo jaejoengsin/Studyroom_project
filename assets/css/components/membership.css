@@ -1,0 +1,103 @@
+
+
+
+
+
+.accession-box {
+    width: 960px;
+    margin: 200px auto 100px auto;
+    padding: 50px 30px;
+    background-color: rgba(128,128,128,0.1);
+}
+
+
+.accession-box h2 {
+    text-align: center;
+
+}
+
+.accession-box h3 {
+    text-align: center;
+}
+
+.accession-box ul {
+    display: flex;
+    margin: 0 20px;
+    padding:20px 0;
+    border-top:3px solid rgb(0,0,0,0.5);
+    border-bottom:3px solid rgb(0,0,0,0.5);
+
+    justify-content: center;
+    flex-direction: column;
+    gap:20px;
+}
+
+.accession-box li {
+    list-style: none;
+    display: flex;
+    gap:15px;
+
+}
+
+
+.accession-box li span {
+    flex-basis: 20%;
+    font-weight: 600;
+
+}
+
+
+.accession-box li input {
+    flex-basis: 80%;
+    margin:0;
+    padding:0;
+    border:0.8px solid rgb(0,0,0,0.3);
+
+}
+
+.accession-box li input[type="text"]:checked {
+    border:0.8px solid rgb(0,0,0,0.1);
+}
+
+
+.access-button {
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.access-button button {
+    padding: 10px 20px;
+    border:0.5px solid rgba(0, 0, 0, 0.3);
+    flex-basis: 200px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff5eb;
+    
+}
+
+
+  .access-button button:hover {
+    transform: scale(1.02);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+
+  }
+
+
+  @media screen and (max-width:767px) {
+    .accession-box {
+        width: auto;
+    }
+
+    .accession-box li span {
+    flex-basis: 30%;
+    }
+    .accession-box li input {
+    flex-basis: 70%;
+    }
+    
+  }
+
+
