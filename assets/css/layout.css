@@ -172,6 +172,7 @@ body.nighttime .login-btn {
   .hamburger {
     display: block;
   }
+}
 
   /* 왼쪽 사이드바 */
   nav.navbar {
@@ -204,38 +205,7 @@ body.nighttime .login-btn {
     background-color: rgba(255, 255, 255, 0.1) !important;
   }
 
-<<<<<<< HEAD
-  /* 본문 */
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 140px 20px 40px 20px; /* 네비게이션 바 아래로 여백 추가 */
-    transition: background-color 0.3s ease;
-  }
-
-/* 푸터 */
-footer {
-    background-color: #f1f1f1;
-    padding: 40px 20px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  footer .policy,
-  footer .shopinfo {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  footer .address {
-    margin-top: 10px;
-  }
-
-  footer dl {
-    margin: 10px 0;
-=======
   nav.navbar.active {
     transform: translateX(0);
->>>>>>> yewon/feature/building_structure
   }
-}
+
