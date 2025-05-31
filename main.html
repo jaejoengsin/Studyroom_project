@@ -2,8 +2,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>스터디룸 예약 시스템</title>
+    
     <!-- 폰트링크 -->
     <link rel="stylesheet" href="assets/css/font_style.css">
     <!--css link -->
@@ -12,8 +13,9 @@
     <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
     <link rel="stylesheet" href="assets/css/components/main.css" type="text/css">
     <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
    
 </head>
 
@@ -24,6 +26,11 @@
 
   <!-- 헤더 -->
   <header>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="logo">
        <img src="assets/images/icon2.png" alt="icon">
     </div>
@@ -142,9 +149,8 @@
             </div>
           </footer>
 
-          <!--jquary plogin-->
-          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
+
+    
 
           <script>
 
@@ -205,6 +211,16 @@
               document.body.classList.remove('daytime');
             }
           }
+
+          document.addEventListener('DOMContentLoaded', () => {
+            // 햄버거 메뉴 토글
+            const hamburger = document.querySelector('.hamburger');
+            const navbar = document.querySelector('nav.navbar');
+
+            hamburger.addEventListener('click', () => {
+              navbar.classList.toggle('active');
+            });
+          });
 
           // 페이지 로드 시 테마 적용
           updateTheme();
