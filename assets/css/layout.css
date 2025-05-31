@@ -139,7 +139,7 @@ body.nighttime .login-btn {
   transition: 0.3s;
 }
 /* 데스크탑용 네비게이션 복원 */
-@media screen and (max-width: 2000px) {
+@media screen and (min-width: 767px) {
   .hamburger {
     display: none;
   }
@@ -172,7 +172,7 @@ body.nighttime .login-btn {
   .hamburger {
     display: block;
   }
-}
+
 
   /* 왼쪽 사이드바 */
   nav.navbar {
@@ -209,3 +209,4 @@ body.nighttime .login-btn {
     transform: translateX(0);
   }
 
+}
