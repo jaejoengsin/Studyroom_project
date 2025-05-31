@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>payment_page</title>
+    <title>결제 페이지</title>
     <link rel="stylesheet" href="assets/css/font_style.css">
      <!--css link -->
   <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
   <link rel="stylesheet" href="assets/css/components/payment_page.css" type="text/css">
   <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
       <!-- 로그인 버튼 -->
@@ -18,8 +19,13 @@
 
   <!-- 헤더 -->
   <header>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="logo">
-       <img src="assets/images/icon2.png" alt="icon">
+       <img src="assets/images/icon2.png" alt="icon" id="logo">
     </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
@@ -28,7 +34,7 @@
       <a href="inform_rout.html">오시는길</a>
     </nav>
   </header>
-
+  <main>
         <!-- 메인 콘텐츠 영역 -->
         <div>
             <div class="information-box">
@@ -77,6 +83,7 @@
             </section>
         </div>
       </div>
+      </main>
     
         <!-- 푸터 영역 -->
         <footer>
@@ -142,20 +149,32 @@
            let complete_paymentLinkButton = document.getElementById("complete_paymentLinkButton");
            complete_paymentLinkButton.addEventListener('click', () => saveUserData());
 
+           document.addEventListener('DOMContentLoaded', () => {
+            // 햄버거 메뉴 토글
+            const hamburger = document.querySelector('.hamburger');
+            const navbar = document.querySelector('nav.navbar');
+
+            hamburger.addEventListener('click', () => {
+              navbar.classList.toggle('active');
+            });
+          });
+
 
            function updateTheme() {
-            const now = new Date();
-            const hour = now.getHours();
-            const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
-
-            if (isDaytime) {
-              document.body.classList.add('daytime');
-              document.body.classList.remove('nighttime');
-            } else {
-              document.body.classList.add('nighttime');
-              document.body.classList.remove('daytime');
+              const now = new Date();
+              const hour = now.getHours();
+              const isDaytime = hour >= 6 && hour < 18;
+              const logo = document.getElementById("logo");
+              if (isDaytime) {
+                document.body.classList.add('daytime');
+                document.body.classList.remove('nighttime');
+                logo.src = 'assets/images/icon2.png';
+              } else {
+                document.body.classList.add('nighttime');
+                document.body.classList.remove('daytime');
+                logo.src = 'assets/images/nighticon.png';
+              }
             }
-          }
 
           // 페이지 로드 시 테마 적용
           updateTheme();

@@ -139,7 +139,7 @@ body.nighttime .login-btn {
   transition: 0.3s;
 }
 /* 데스크탑용 네비게이션 복원 */
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .hamburger {
     display: none;
   }

@@ -10,6 +10,7 @@
        <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
        <link rel="stylesheet" href="assets/css/components/complete_payment.css" type="text/css">
        <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+       <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
       <!-- 로그인 버튼 -->
@@ -17,8 +18,14 @@
 
   <!-- 헤더 -->
   <header>
+   
+     <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="logo">
-       <img src="assets/images/icon2.png" alt="icon">
+       <img src="assets/images/icon2.png" alt="icon" id="logo">
     </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
@@ -27,11 +34,10 @@
       <a href="inform_rout.html">오시는길</a>
     </nav>
   </header>
-        <!--예약 정보 위에 작은 이미지 하나 더 띄울까 생각중-->
-      <section class="information-box">
+
+  <main>
+      <section class="information-box ">
         <h2>예약이 완료되었습니다!</h2>
-        <!--일단은 테이블로 정리, 내부 데이터는 예약 페이지에서 입력한 데이터를 가져옴(자바 스크립트 연동?)
-         이렇게 정적으로 구조만 잡아놓고 나중에 수정-->
          <div class="reservation-info">
             <ul>
                 <li><span>예약자</span> <span id="name"></span></li>
@@ -47,8 +53,8 @@
             </ul>
          </div>
       </section>
-      <!--이후 마이 페이지 연동 가능하면 연동 링크 추가-->
-
+  </main>
+     
    <!-- 푸터 영역 -->
         <footer>
             <div class="policy">
@@ -97,19 +103,33 @@
             }
           }
 
-          function updateTheme() {
+           function updateTheme() {
             const now = new Date();
             const hour = now.getHours();
-            const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
-
+            const isDaytime = hour >= 6 && hour < 18;
+            const logo = document.getElementById("logo");
             if (isDaytime) {
               document.body.classList.add('daytime');
               document.body.classList.remove('nighttime');
+              logo.src = 'assets/images/icon2.png';
             } else {
               document.body.classList.add('nighttime');
               document.body.classList.remove('daytime');
+              logo.src = 'assets/images/nighticon.png';
             }
           }
+
+           document.addEventListener('DOMContentLoaded', () => {
+              // 햄버거 메뉴 토글
+              const hamburger = document.querySelector('.hamburger');
+              const navbar = document.querySelector('nav.navbar');
+
+              hamburger.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+              });
+            });
+
+
 
           // 페이지 로드 시 테마 적용
           updateTheme();
