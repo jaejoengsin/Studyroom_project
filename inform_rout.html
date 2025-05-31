@@ -10,14 +10,17 @@
      <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
      <link rel="stylesheet" href="assets/css/components/inform.css" type="text/css">
      <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-          <!-- 로그인 버튼 -->
+      <!-- 로그인 버튼 -->
   <a class="login-btn" href="login.html">log in</a>
 
   <!-- 헤더 -->
   <header>
-    <img class="logo" src="icon2.png" alt="icon">
+    <div class="logo">
+       <img src="assets/images/icon2.png" alt="icon">
+    </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
       <a href="introduction.html">이용안내</a>
@@ -25,16 +28,14 @@
       <a href="inform_rout.html">오시는길</a>
     </nav>
   </header>
-  <style>
 
-  </style>
      <main>
         <!--작은 로고 이미지 메인의 맨 상단에 추가-->
   
          <section class="info">
             <!--지도 이미지(임시) + 길 소개-->
             <article class="info-form">
-              <div>
+              <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
                 <h2><b>오시는길</b></h2>
                 <img src="assets/images/map.png" alt="스터디룸지도">
                 <ul>
@@ -43,7 +44,7 @@
                 </ul>
                 </div>
                 <!--위치 파악에 도움이 될 수 있는 주변 정보-->
-                <div>
+                <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
                 <h2><b>주변 정보</b></h2>
                 <ul>
                     <li>건물 내 유료 주차 가능</li>
@@ -54,12 +55,12 @@
                     <li>00의원, 00헬스 클럽 건물 내부</li>
                 </ul>
                 </div>
-                <div>
+                <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
                 <h2>스터디룸 입구</h2>
                 <!--입구사진(임시)-->
                 <img src="assets/images/insightroom_enter.png" alt="스터디룸입구">  
                 </div>
-                <div>
+                <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
                 <h2>입실 전 주의사항</h2>
                 <ul style="text-align: left; ">
                     <li>외부음료 반입할 수 없습니다</li>
@@ -104,6 +105,45 @@
               </dl>
             </div>
           </footer>
+
+          <!--jquary plogin-->
+          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
+
+          <script>
+
+            $(document).ready(function () {
+            console.log("jQuery ready!");
+            $('.scrolla').scrolla({
+              mobile: true,
+              once: true,
+              animateCssVersion: 4
+            });
+            console.log("jQuery rasdfa!");
+          });
+
+
+            function updateTheme() {
+              const now = new Date();
+              const hour = now.getHours();
+              const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
+
+              if (isDaytime) {
+                document.body.classList.add('daytime');
+                document.body.classList.remove('nighttime');
+              } else {
+                document.body.classList.add('nighttime');
+                document.body.classList.remove('daytime');
+              }
+            }
+
+            // 페이지 로드 시 테마 적용
+            updateTheme();
+
+            // 1시간마다 테마 업데이트
+            setInterval(updateTheme, 60 * 60 * 1000);
+
+          </script>
 
 </body>
 </html>

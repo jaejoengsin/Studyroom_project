@@ -13,12 +13,14 @@
   <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
 </head>
 <body>
-     <!-- 로그인 버튼 -->
+      <!-- 로그인 버튼 -->
   <a class="login-btn" href="login.html">log in</a>
 
   <!-- 헤더 -->
   <header>
-    <img class="logo" src="icon2.png" alt="icon">
+    <div class="logo">
+       <img src="assets/images/icon2.png" alt="icon">
+    </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
       <a href="introduction.html">이용안내</a>
@@ -28,7 +30,7 @@
   </header>
 
         <!-- 메인 콘텐츠 영역 -->
-        <main>
+        <div>
             <div class="information-box">
             <h2 class="payment-main-title">결제하기</h2>
             <h2 class="payment-title">예약자 정보</h2>
@@ -74,7 +76,7 @@
                    <button id="complete_paymentLinkButton">결제하기</button>
             </section>
         </div>
-        </main>
+      </div>
     
         <!-- 푸터 영역 -->
         <footer>
@@ -139,6 +141,27 @@
 
            let complete_paymentLinkButton = document.getElementById("complete_paymentLinkButton");
            complete_paymentLinkButton.addEventListener('click', () => saveUserData());
+
+
+           function updateTheme() {
+            const now = new Date();
+            const hour = now.getHours();
+            const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
+
+            if (isDaytime) {
+              document.body.classList.add('daytime');
+              document.body.classList.remove('nighttime');
+            } else {
+              document.body.classList.add('nighttime');
+              document.body.classList.remove('daytime');
+            }
+          }
+
+          // 페이지 로드 시 테마 적용
+          updateTheme();
+
+          // 1시간마다 테마 업데이트
+          setInterval(updateTheme, 60 * 60 * 1000);
 
           </script>
 

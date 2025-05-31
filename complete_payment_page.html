@@ -12,22 +12,21 @@
        <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
 </head>
 <body>
-
-           <!-- 로그인 버튼 -->
+      <!-- 로그인 버튼 -->
   <a class="login-btn" href="login.html">log in</a>
 
   <!-- 헤더 -->
   <header>
-    <img class="logo" src="icon2.png" alt="icon">
+    <div class="logo">
+       <img src="assets/images/icon2.png" alt="icon">
+    </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
       <a href="introduction.html">이용안내</a>
       <a href="service.html">고객지원</a>
       <a href="inform_rout.html">오시는길</a>
     </nav>
-  </header>  
-
-    <main>
+  </header>
         <!--예약 정보 위에 작은 이미지 하나 더 띄울까 생각중-->
       <section class="information-box">
         <h2>예약이 완료되었습니다!</h2>
@@ -49,9 +48,6 @@
          </div>
       </section>
       <!--이후 마이 페이지 연동 가능하면 연동 링크 추가-->
-      
-
-    </main>
 
    <!-- 푸터 영역 -->
         <footer>
@@ -100,6 +96,28 @@
               alert("질못된 페이지 로드입니다");
             }
           }
+
+          function updateTheme() {
+            const now = new Date();
+            const hour = now.getHours();
+            const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
+
+            if (isDaytime) {
+              document.body.classList.add('daytime');
+              document.body.classList.remove('nighttime');
+            } else {
+              document.body.classList.add('nighttime');
+              document.body.classList.remove('daytime');
+            }
+          }
+
+          // 페이지 로드 시 테마 적용
+          updateTheme();
+
+          // 1시간마다 테마 업데이트
+          setInterval(updateTheme, 60 * 60 * 1000);
+
+
     </script>
     
 </body>

@@ -43,16 +43,27 @@
 
 
           .main-first-visible-logo {
+            position: relative;
             width: 25%;
             height: 100%;
             float: left;
             z-index: 2;
-            background-image: url("../../images/icon.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: auto auto;
+            margin: 0 auto;
+
 
           }
+
+          .main-first-visible-logo img {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            
+          }
+      
 
             .main-first-visible-intro {
             width: 25%;
@@ -221,7 +232,7 @@
             background-image: url("../../images/room601.png");
             background-repeat: no-repeat;
             background-size: 100%;
-  
+ 
   
           }
   

@@ -18,29 +18,31 @@
 
 
 <body>
-       <!-- 로그인 버튼 -->
+         <!-- 로그인 버튼 -->
   <a class="login-btn" href="login.html">log in</a>
 
   <!-- 헤더 -->
   <header>
-    <img class="logo" src="assets/images/icon2.png" alt="icon">
+    <div class="logo">
+       <img src="assets/images/icon2.png" alt="icon">
+    </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
       <a href="introduction.html">이용안내</a>
       <a href="service.html">고객지원</a>
       <a href="inform_rout.html">오시는길</a>
-    </nav>    
+    </nav>
   </header>
 
     <section class="accession-box">
         <h2>회원가입</h2>
         <h3>회원정보 입력</h3>
         <ul>
-            <li><span>이름</span><input type="text"></li>
-            <li><span>id</span><input type="text"></li>
-            <li><span>비밀번호</span><input type="text"></li>
-            <li><span>전화번호</span><input type="text"></li>
-            <li><span>생년월일</span><input type="text"></li>
+            <li><span>이름</span><input id="name" type="text"></li>
+            <li><span>id</span><input id="id" type="text"></li>
+            <li><span>비밀번호</span><input id="password" type="text"></li>
+            <li><span>전화번호</span><input id="phone" type="text"></li>
+            <li><span>생년월일</span><input id="birth" type="text"></li>
         </ul>
         <div class="access-button" >
           <button id="completeAccessionBotton">가입하기</button>
@@ -70,13 +72,68 @@
             </div>
           </footer>
 
+          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
           <script>
-             let completeAccessionBotton = document.getElementById("completeAccessionBotton");
+
+            $(document).ready(function() {
+              if (!localStorage.getItem("joinData")) {
+                const joinData = {};
+                localStorage.setItem("joinData", JSON.stringify(joinData));
+                console.log("객체 생성 완료");
+              } else {
+                console.log("객체 이미 존재함");
+              }
+            });
 
              function Fnext () {
+              const joinUser = {};
+              joinUser["name"] = $("#name").val();
+              joinUser["id"] = $("#id").val();
+              joinUser["password"] = $("#password").val();
+              joinUser["phone"] = $("#phone").val();
+              joinUser["birth"] = $("#birth").val();
+              for (const key in joinUser) {
+                if(joinUser[key]=="") {
+                  alert(`${key}가 입력되지 않았습니다`);
+                  return;
+                }
+              }
+
+              const joinData = JSON.parse(localStorage.getItem("joinData"));
+              joinData[Object.keys(joinData).length] = joinUser;
+              localStorage.setItem("joinData",JSON.stringify(joinData));
               alert("회원가입이 완료되었습니다!")
               window.location.href="main.html";
              }
-             completeAccessionBotton.addEventListener('click', () => Fnext());
+
+            $("#completeAccessionBotton").on("click", Fnext);
+
+
+
+             function updateTheme() {
+              const now = new Date();
+              const hour = now.getHours();
+              const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
+
+              if (isDaytime) {
+                document.body.classList.add('daytime');
+                document.body.classList.remove('nighttime');
+              } else {
+                document.body.classList.add('nighttime');
+                document.body.classList.remove('daytime');
+              }
+            }
+
+            // 페이지 로드 시 테마 적용
+            updateTheme();
+
+            // 1시간마다 테마 업데이트
+            setInterval(updateTheme, 60 * 60 * 1000);
+
+
           </script>
+
 </body>
+
+</html>
