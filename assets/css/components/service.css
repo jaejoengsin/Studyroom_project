@@ -1,0 +1,36 @@
+
+section h2 {
+  font-size: 24px;
+}
+
+hr {
+  margin: 12px 0;
+}
+
+body.daytime {
+  color: #305070;
+}
+
+body.nighttime {
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* nav.navbar 제외한 링크만 테마별 색상 적용 */
+body.daytime a:not(nav.navbar a) {
+  color: #305070;
+}
+
+body.nighttime a:not(nav.navbar a) {
+  color: #ffffff;
+}
+
+body.daytime a:not(nav.navbar a):hover,
+body.nighttime a:not(nav.navbar a):hover {
+  color: green;
+  text-decoration: underline;
+}

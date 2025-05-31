@@ -11,13 +11,22 @@
   <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
   <link rel="stylesheet" href="assets/css/components/reservation.css" type="text/css">
   <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
 
   <a class="login-btn" href="login.html">log in</a>
 
   <header>
-    <img class="logo" src="icon2.png" alt="icon">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="logo">
+      <img src="assets/images/icon2.png" alt="icon" id="logo">
+    </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
       <a href="introduction.html">이용안내</a>
@@ -42,17 +51,17 @@
 
       <div class="section">
         <h3>스터디룸 선택</h3>
-        <label for="studyroom">스터디룸 선택:
-          <select id="studyroom" onchange="updateSelectedStudyRoom()">
-            <option value="">스터디룸 선택</option>
-            <option value="601호">601호</option>
-            <option value="602호">602호</option>
-            <option value="603호">603호</option>
-            <option value="604호">604호</option>
-            <option value="605호">605호</option>
-            <option value="606호">606호</option>
-            <option value="607호">607호</option>
-            <option value="608호">608호</option></label>
+        <label for="studyroom">스터디룸 선택:</label>
+        <select id="studyroom" onchange="updateSelectedStudyRoom()">
+          <option value="">스터디룸 선택</option>
+          <option value="601호">601호</option>
+          <option value="602호">602호</option>
+          <option value="603호">603호</option>
+          <option value="604호">604호</option>
+          <option value="605호">605호</option>
+          <option value="606호">606호</option>
+          <option value="607호">607호</option>
+          <option value="608호">608호</option>
         </select>
       </div>
       <hr>
@@ -76,7 +85,7 @@
     </div>
   </main>
 
-  <footer> //여기서부터
+  <footer>
     <div class="policy">
       <p class="address">
         스터디룸 : Insight Room<br>
@@ -102,17 +111,20 @@
       const now = new Date();
       const hour = now.getHours();
       const isDaytime = hour >= 6 && hour < 18;
+      const logo = document.getElementById("logo");
       if (isDaytime) {
         document.body.classList.add('daytime');
         document.body.classList.remove('nighttime');
+        logo.src = 'assets/images/icon2.png'; // 낮 로고
       } else {
         document.body.classList.add('nighttime');
         document.body.classList.remove('daytime');
+        logo.src = 'assets/images/nighticon.png'; // 밤 로고
       }
     }
 
     updateTheme();
-    setInterval(updateTheme, 60 * 60 * 1000); 
+    setInterval(updateTheme, 60 * 60 * 1000);
 
 
     // 예약 기능
@@ -123,6 +135,7 @@
     const peopleInput = document.getElementById("people");
     let selectedTime = null;
     const basePrice = 5000;
+
 
     function generateTimeSlots() {
       for (let hour = 0; hour < 24; hour++) {
@@ -167,6 +180,16 @@
     }
 
     generateTimeSlots();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 햄버거 메뉴 토글
+      const hamburger = document.querySelector('.hamburger');
+      const navbar = document.querySelector('nav.navbar');
+  
+      hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+    });
   </script>
 
 </body>
