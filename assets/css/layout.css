@@ -1,53 +1,210 @@
-
-
-
-
-
-    /* 헤더 전체 */
+/* 헤더 전체 */
 header {
-    background-color: #fff5eb;
-    position: fixed;
-    width: 100%;
-    height: 130px;
-    top: 0;
-    z-index: 1000;
-    text-align: center;
-    padding:0;
-    padding-top: 10px;
-    transition: background-color 0.3s ease;
-    overflow: hidden;
-  }
+  background-color: #fff5eb;
+  position: fixed;
+  width: 100%;
+  height: 130px;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+  padding-top: 10px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
 
-
+/* 메인 여백 */
 main {
   padding-top: 140px;
 }
-     /* 네비게이션 바 - 플렉스 레이아웃 */
+
+/* 네비게이션 바 (기본: 데스크탑) */
 nav.navbar {
+  height: 40%;
+  background-color: #305070;
+  color: #fff5eb;
+  padding: 0;
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+nav.navbar a {
+  margin: 0 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff5eb;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+nav.navbar a:hover {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+/* 본문 */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 140px 20px 40px 20px;
+}
+
+/* 푸터 */
+footer {
+  background-color: #f1f1f1;
+  padding: 40px 20px;
+  font-size: 16px;
+}
+
+footer .policy,
+footer .shopinfo {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer .address {
+  margin-top: 10px;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #305070;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.login-btn:hover {
+  color: #87ceeb !important;
+}
+
+/* 밤 테마 */
+body.nighttime .login-btn {
+  color: #fff5eb;
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.logo img {
+  display: block;
+  width: 160px;
+  margin: auto 0;
+}
+
+/* 정보 박스 */
+.information-box {
+  background-color: #fff5eb;
+  color: #305070;
+  max-width: 600px;
+  margin: 70px auto 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.information-box h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* 햄버거 버튼 */
+.hamburger {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #305070;
+  transition: 0.3s;
+}
+/* 데스크탑용 네비게이션 복원 */
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  nav.navbar {
+    position: static;
+    transform: none !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 40%;
     background-color: #305070;
-    color: #fff5eb;
-    padding:0;
-    margin: auto 0;
-    display: flex;
-    justify-content: center; /* 중앙 정렬 */
-    align-items: center;
-    transition: background-color 0.3s ease;
+    padding: 0;
   }
 
   nav.navbar a {
     margin: 0 30px;
-    text-decoration: none;
-    font-weight: bold;
     color: #fff5eb;
-    transition: color 0.3s, text-decoration 0.3s;
+    border-bottom: none;
+  }
+}
+
+
+/* 모바일 전용 스타일 */
+@media screen and (max-width: 767px) {
+  .information-box {
+    max-width: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* 왼쪽 사이드바 */
+  nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color:rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(3px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 20px 20px 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.navbar a {
+    width: 100%;
+    padding: 12px 10px;
+    color: #4b0082;    
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
   }
 
   nav.navbar a:hover {
-    color: #ffeb3b; /* 마우스 오버 시 노란색 */
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1) !important;
   }
 
+<<<<<<< HEAD
   /* 본문 */
   .container {
     max-width: 1000px;
@@ -76,4 +233,9 @@ footer {
 
   footer dl {
     margin: 10px 0;
+=======
+  nav.navbar.active {
+    transform: translateX(0);
+>>>>>>> yewon/feature/building_structure
   }
+}
