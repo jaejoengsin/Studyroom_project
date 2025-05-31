@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
+    <script src="assets/scripts/hamburgerMenu.js"></script>
+    <script src="assets/scripts/time_theme.js"></script>
    
 </head>
 
@@ -148,10 +150,6 @@
               </dl>
             </div>
           </footer>
-
-
-    
-
           <script>
 
             $(document).ready(function () {
@@ -197,38 +195,12 @@
             prevButton.addEventListener('click', () => changeContent(-1));
             nextButton.addEventListener('click', () => changeContent(1));
 
-
-            function updateTheme() {
-            const now = new Date();
-            const hour = now.getHours();
-            const isDaytime = hour >= 6 && hour < 18; // 일출 6시부터 일몰 18시까지 낮
-
-            if (isDaytime) {
-              document.body.classList.add('daytime');
-              document.body.classList.remove('nighttime');
-            } else {
-              document.body.classList.add('nighttime');
-              document.body.classList.remove('daytime');
-            }
-          }
-
-          document.addEventListener('DOMContentLoaded', () => {
-            // 햄버거 메뉴 토글
-            const hamburger = document.querySelector('.hamburger');
-            const navbar = document.querySelector('nav.navbar');
-
-            hamburger.addEventListener('click', () => {
-              navbar.classList.toggle('active');
-            });
-          });
-
-          // 페이지 로드 시 테마 적용
+               // 페이지 로드 시 테마 적용
           updateTheme();
 
           // 1시간마다 테마 업데이트
           setInterval(updateTheme, 60 * 60 * 1000);
 
-        
 
           </script>
 

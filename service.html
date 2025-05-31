@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="assets/css/components/service.css" type="text/css">
   <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/scripts/hamburgerMenu.js"></script>
+  <script src="assets/scripts/time_theme.js"></script>
 </head>
 
 <body>
@@ -103,39 +105,14 @@
       </dl>
     </div>
   </footer>
-  <script>
-    // 테마 변경
-    function updateTheme() {
-      const now = new Date();
-      const hour = now.getHours();
-      const isDaytime = hour >= 6 && hour < 18;
-      const logo = document.getElementById("logo");
-      if (isDaytime) {
-        document.body.classList.add('daytime');
-        document.body.classList.remove('nighttime');
-        logo.src = 'assets/images/icon2.png'; // 낮 로고
-      } else {
-        document.body.classList.add('nighttime');
-        document.body.classList.remove('daytime');
-        logo.src = 'assets/images/nighticon.png'; // 밤 로고
-      }
-    }
-
-    updateTheme();
-    setInterval(updateTheme, 60 * 60 * 1000);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // 햄버거 메뉴 토글
-      const hamburger = document.querySelector('.hamburger');
-      const navbar = document.querySelector('nav.navbar');
   
-      hamburger.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-      });
-    });
+  <script>
+       // 페이지 로드 시 테마 적용
+       updateTheme();
 
+          // 1시간마다 테마 업데이트
+       setInterval(updateTheme, 60 * 60 * 1000);
   </script>
-
 </body>
 
 </html>
