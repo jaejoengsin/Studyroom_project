@@ -35,15 +35,22 @@
   margin-bottom: 20px;
 }
 
-/* 슬라이더 전체 영역 */
-.room-slider {
-  display: flex;
+.room-slider-wrapper {
+  width: 100%;
   overflow-x: auto;
-  gap: 50px;
-  justify-content: flex-start;
+  white-space: nowrap; /* 인라인 블록 요소들이 한 줄에 붙게 */
+  padding-bottom: 10px;
+  box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
-  padding-bottom: 10px;
+}
+
+.room-slider {
+  display: inline-flex;      /* 인라인 플렉스로 동작 */
+  justify-content: flex-start;
+  gap: 50px;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* 각 슬롯 박스 */

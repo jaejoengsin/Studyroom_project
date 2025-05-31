@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이용안내 | 웹프스터디룸</title>
   <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
   <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
@@ -11,178 +13,182 @@
   <link rel="stylesheet" href="assets/css/roomslider.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
 
-<a class="login-btn" href="login.html">log in</a>
+  <a class="login-btn" href="login.html">log in</a>
 
-<header>
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <div class="logo">
-    <img src="assets/images/icon2.png" alt="icon" id="logo">
-  </div>
-  <nav class="navbar">
-    <a href="main.html">홈</a>
-    <a href="introduction.html">이용안내</a>
-    <a href="service.html">고객지원</a>
-    <a href="inform_rout.html">오시는길</a>
-  </nav>
-</header>
+  <header>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="logo">
+      <img src="assets/images/icon2.png" alt="icon" id="logo">
+    </div>
+    <nav class="navbar">
+      <a href="main.html">홈</a>
+      <a href="introduction.html">이용안내</a>
+      <a href="service.html">고객지원</a>
+      <a href="inform_rout.html">오시는길</a>
+    </nav>
+  </header>
 
-<main class="room-intro">
-  <h2>스터디룸 이용안내</h2>
-  <p class="room-description">
-    좌측 배치도를 참고하여 원하시는 스터디룸을 선택해 주세요.<br>
-    각 호실의 인원 수, 적합한 용도, 구비 시설 등을 안내해 드립니다.
-  </p>
-  <div>
-    <img class="room-map" src="assets/images/StudyRoomImage.jpg" alt="스터디룸 좌석 배치도">
-  </div>
-</main>
-
-<!-- 타임슬롯 형식의 슬라이드형 스터디룸 설명 -->
-<section class="room-slider-section">
-  <h3 class="slider-title">ROOM INTRODUCTION</h3>
-  <div class="room-slider">
-    <div class="room-slot">
-      <h4>601호</h4>
-      <img src="assets/images/room601.png" alt="601호 이미지">
-      <p>소규모 회의실, 6인 이용 가능. 화이트보드 및 모니터 구비.</p>
-    </div>
-    <div class="room-slot">
-      <h4>602호</h4>
-      <img src="assets/images/room602.png" alt="602호 이미지">
-      <p>8인 회의 테이블. 조용한 독립공간으로 프레젠테이션 가능.</p>
-    </div>
-    <div class="room-slot">
-      <h4>603호</h4>
-      <img src="assets/images/room603.png" alt="603호 이미지">
-      <p>최대 20인 수용 가능, 세미나 및 워크숍 적합.</p>
-    </div>
-    <div class="room-slot">
-      <h4>604호</h4>
-      <img src="assets/images/room604.png" alt="604호 이미지">
-      <p>중형 회의실, 최대 12인 이용. 칠판 및 빔프로젝터 구비.</p>
-    </div>
-    <div class="room-slot">
-      <h4>605호</h4>
-      <img src="assets/images/room605.png" alt="605호 이미지">
-      <p>원형 테이블로 협업 및 토론 중심 회의에 적합.</p>
-    </div>
-    <div class="room-slot">
-      <h4>606호</h4>
-      <img src="assets/images/room606.png" alt="606호 이미지">
-      <p>대형 회의실, 최대 18인 가능. 판서 및 노트북 사용 용이.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 예약 버튼 -->
-<div class="bottom-reserve">
-<a href="reservation.html" class="reserve-btn" onclick="goToReservation(event)">스터디룸 예약하러 가기</a>
-</div>
-
-<footer>
-  <div class="policy">
-    <p class="address">
-      스터디룸 : Insight Room<br>
-      사업자명 : 최재정, 박예원<br>
-      사업자등록번호 : 202015497-202311694<br>
+  <main class="room-intro">
+    <h2>스터디룸 이용안내</h2>
+    <p class="room-description">
+      좌측 배치도를 참고하여 원하시는 스터디룸을 선택해 주세요.<br>
+      각 호실의 인원 수, 적합한 용도, 구비 시설 등을 안내해 드립니다.
     </p>
+    <div>
+      <img class="room-map" src="assets/images/StudyRoomImage.jpg" alt="스터디룸 좌석 배치도">
+    </div>
+  </main>
+
+  <!-- 타임슬롯 형식의 슬라이드형 스터디룸 설명 -->
+  <section class="room-slider-section">
+    <h3 class="slider-title">ROOM INTRODUCTION</h3>
+    <div class="room-slider-wrapper">
+      <div class="room-slider">
+        <div class="room-slot">
+          <h4>601호</h4>
+          <img src="assets/images/room601.png" alt="601호 이미지">
+          <p>소규모 회의실, 6인 이용 가능. 화이트보드 및 모니터 구비.</p>
+        </div>
+        <div class="room-slot">
+          <h4>602호</h4>
+          <img src="assets/images/room602.png" alt="602호 이미지">
+          <p>8인 회의 테이블. 조용한 독립공간으로 프레젠테이션 가능.</p>
+        </div>
+        <div class="room-slot">
+          <h4>603호</h4>
+          <img src="assets/images/room603.png" alt="603호 이미지">
+          <p>최대 20인 수용 가능, 세미나 및 워크숍 적합.</p>
+        </div>
+        <div class="room-slot">
+          <h4>604호</h4>
+          <img src="assets/images/room604.png" alt="604호 이미지">
+          <p>중형 회의실, 최대 12인 이용. 칠판 및 빔프로젝터 구비.</p>
+        </div>
+        <div class="room-slot">
+          <h4>605호</h4>
+          <img src="assets/images/room605.png" alt="605호 이미지">
+          <p>원형 테이블로 협업 및 토론 중심 회의에 적합.</p>
+        </div>
+        <div class="room-slot">
+          <h4>606호</h4>
+          <img src="assets/images/room606.png" alt="606호 이미지">
+          <p>대형 회의실, 최대 18인 가능. 판서 및 노트북 사용 용이.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 예약 버튼 -->
+  <div class="bottom-reserve">
+    <a href="reservation.html" class="reserve-btn" onclick="goToReservation(event)">스터디룸 예약하러 가기</a>
   </div>
-  <div class="shopinfo">
-    <dl>
-      <dt>모임공간 운영시간 :</dt>
-      <dd><strong>365일 24시간</strong> 이용가능</dd>
-    </dl>
-    <dl>
-      <dt>예약상담시간 :</dt>
-      <dd>평일&토요일 10시~22시 (일요일 10시~20시)</dd>
-    </dl>
-  </div>
-</footer>
 
-<script>
-  function updateTheme() {
-    const now = new Date();
-    const hour = now.getHours();
-    const isDaytime = hour >= 6 && hour < 18;
-    const logo = document.getElementById("logo");
-    if (isDaytime) {
-      document.body.classList.add('daytime');
-      document.body.classList.remove('nighttime');
-      logo.src = 'assets/images/icon2.png';
-    } else {
-      document.body.classList.add('nighttime');
-      document.body.classList.remove('daytime');
-      logo.src = 'assets/images/nighticon.png';
+  <footer>
+    <div class="policy">
+      <p class="address">
+        스터디룸 : Insight Room<br>
+        사업자명 : 최재정, 박예원<br>
+        사업자등록번호 : 202015497-202311694<br>
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
+
+  <script>
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isDaytime = hour >= 6 && hour < 18;
+      const logo = document.getElementById("logo");
+      if (isDaytime) {
+        document.body.classList.add('daytime');
+        document.body.classList.remove('nighttime');
+        logo.src = 'assets/images/icon2.png';
+      } else {
+        document.body.classList.add('nighttime');
+        document.body.classList.remove('daytime');
+        logo.src = 'assets/images/nighticon.png';
+      }
     }
-  }
 
-  updateTheme();
-  setInterval(updateTheme, 60 * 60 * 1000);
+    updateTheme();
+    setInterval(updateTheme, 60 * 60 * 1000);
 
-  function goToReservation() {
-    event.preventDefault(); 
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-  
-    if (isLoggedIn === "true") {
-      location.href = "reservation.html"; // 로그인 시 예약 페이지로 이동
-    } else {
-      alert("예약하려면 로그인이 필요합니다. 로그인 페이지로 이동합니다.");
-      location.href = "login.html"; // 로그인 안 했을 경우 로그인 페이지로 이동
+    function goToReservation() {
+      event.preventDefault();
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+      if (isLoggedIn === "true") {
+        location.href = "reservation.html"; // 로그인 시 예약 페이지로 이동
+      } else {
+        alert("예약하려면 로그인이 필요합니다. 로그인 페이지로 이동합니다.");
+        location.href = "login.html"; // 로그인 안 했을 경우 로그인 페이지로 이동
+      }
     }
-  }
 
-  $(document).ready(function () {
-    $(".room-slot").on("click", function () {
-      $(".room-slot").removeClass("selected");
-      $(this).addClass("selected");
+    $(document).ready(function () {
+      $(".room-slot").on("click", function () {
+        $(".room-slot").removeClass("selected");
+        $(this).addClass("selected");
+      });
+
+
+
+
+      // 모바일 가로 스크롤 스와이프 UX 개선 (터치 지원)
+      let isDown = false, startX, scrollLeft;
+
+      const slider = document.querySelector('.room-slider');
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // 스크롤 속도 조절
+        slider.scrollLeft = scrollLeft - walk;
+      });
     });
 
-  
-    
+    document.addEventListener('DOMContentLoaded', () => {
+      // 햄버거 메뉴 토글
+      const hamburger = document.querySelector('.hamburger');
+      const navbar = document.querySelector('nav.navbar');
 
-    // 모바일 가로 스크롤 스와이프 UX 개선 (터치 지원)
-    let isDown = false, startX, scrollLeft;
-
-    const slider = document.querySelector('.room-slider');
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
+      hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
     });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; // 스크롤 속도 조절
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // 햄버거 메뉴 토글
-    const hamburger = document.querySelector('.hamburger');
-    const navbar = document.querySelector('nav.navbar');
-
-    hamburger.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>
