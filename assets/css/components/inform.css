@@ -16,6 +16,10 @@ h2 {
     border-bottom: 8px solid #fff5eb;
 }
 
+.daytime main {
+    background-color: white;
+}
+
 
 /* .body-logo {
     position: relative;
@@ -47,6 +51,12 @@ h2 {
     text-align: center;
 }
 
+.nighttime .info {
+    border-left: 1.2px solid rgba(255, 255, 255, 0.5);
+    border-right: 1.2px solid rgba(255, 255, 255, 0.5);
+   
+}
+
 .info-form {
     position: relative;
     max-width: 400px;
@@ -60,6 +70,8 @@ h2 {
     justify-content: center;
 }
 
+
+
 .info-form img {
     width: 100%;
     height: auto;
@@ -72,6 +84,10 @@ h2 {
     border-radius: 10px;
     padding: 13px;
     margin-top: 0px;
+}
+
+.nighttime .info-form ul {
+    background-color: white ;
 }
 
 .info-form li {

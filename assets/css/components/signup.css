@@ -2,12 +2,17 @@
 
 
 
+.nighttime .accession-box {
+    background-color: #fff5eb;
+    color: #305070;
+}
 
 .accession-box {
     width: 960px;
     margin: 200px auto 100px auto;
-    padding: 140px 30px;
+    padding: 130px 30px;
     background-color: rgba(128,128,128,0.1);
+    border-radius: 30px;
 }
 
 

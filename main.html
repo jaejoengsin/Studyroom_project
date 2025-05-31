@@ -8,11 +8,11 @@
     <!-- 폰트링크 -->
     <link rel="stylesheet" href="assets/css/font_style.css">
     <!--css link -->
+    <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
     <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
     <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
     <link rel="stylesheet" href="assets/css/components/main.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
@@ -24,7 +24,9 @@
 
 <body>
        <!-- 로그인 버튼 -->
+
   <a class="login-btn" href="login.html">log in</a>
+  
 
   <!-- 헤더 -->
   <header>
@@ -34,7 +36,7 @@
       <span></span>
     </div>
     <div class="logo">
-       <img src="assets/images/icon2.png" alt="icon" id=" logo">
+       <img src="assets/images/icon2.png" alt="icon" id="logo">
     </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
@@ -62,16 +64,14 @@
           <div>
               <h2 style="font-size: 1.8em; margin-top:0px;">모두를 위한, 모두의 공간</h2>
               <p style="font-size: 1.4em;">자유롭게, 편안하게</p>
-              <a ></a>
-              <a href="payment_page.html">결제</a>
-              <a href="complete_payment_page.html">결제완료</a>
-              <a href="reservation.html">예약</a>
-              <a href="membership.html">회원가입</a>
+    
           </div>
         </section>
         
         <section class="content01">
-          <div class="logo-between"><img src="assets/images/icon3.png" height="100%" width="100%"></div>
+          <div class="wrap">
+          <div class="logo-between"></div>
+          </div>
           <div class="explainarea scrolla " data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s" >
             <p style="font-size: 1.5em; margin:0px; padding: 20px 0px">
               그룹 스터디, 각종 회의를 위한 다양한 맞춤형 공간
@@ -97,6 +97,7 @@
            </div>
           </div>
         </section>
+        <div class="wrap2">
         <section class="content02 scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.3s">
           <div><h3>쾌적하고 조용한 공간</h3><p>조용하고 분위기 속에서 편안하게 학습과 협업이 가능한 공간</p></div>
           <div><h3>다양한 목적에 부합하는 공간</h3><p>소규모 회의나 그룹 스터디를 위한 공간까지, 목적에 따라 다양한 공간</p></div>
@@ -104,8 +105,10 @@
           <div><h3>오래 머무를 수 있는 공간</h3><p>장시간 공부와 업무를 이어갈 수 있는 공간</p></div>
 
         </section>
+        </div>
         <!--공지사항 페이지에서 일부 데이터를 가져와 노출, more info는 더보기 링크로 공지사항 페이지로 연결됨-->
-        <section class="content03" >
+        <div class="wrap3">
+        <section class="wrap content03" >
           <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
             <h2 class="headline"><b>공지사항</b></h2>
             <div class ="addtional-link "><a href="service.html">more info</a></div>
@@ -125,6 +128,7 @@
          </ul>
          </div>
         </section>
+        </div>
 
     </main>
 

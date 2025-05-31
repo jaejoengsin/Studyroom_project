@@ -17,7 +17,7 @@
             height: 500px;
             position: relative;
             overflow: hidden;
-           background-color: #fff5eb;
+            background-color: #fff5eb;
             z-index: 1;
         
           }
@@ -47,7 +47,7 @@
             width: 25%;
             height: 100%;
             float: left;
-            z-index: 2;
+            z-index: 1;
             margin: 0 auto;
 
 
@@ -66,6 +66,7 @@
       
 
             .main-first-visible-intro {
+            backdrop-filter: none;
             width: 25%;
             height: 100%;
             float: left;
@@ -78,6 +79,7 @@
             .main-first-visible-intro h1{
               font-family: 'batang';
               font-weight: 200;
+              color: black;
             }
 
             @media screen and (max-width: 767px) {
@@ -115,6 +117,10 @@
             height: 250px;
             align-items: center;
           }
+
+          .daytime .main-introduce {
+            background-color: white;
+          }
   
           .main-introduce div {
             width: 100%;
@@ -130,9 +136,23 @@
           .logo-between {
             width: 100px;
             height: 50px;
-            padding-top: 20px;
-            margin: 0 auto;
+
+            margin: 50px auto 0 auto;
+            background-image: url("../../images/icon3.png");
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-size: contain;
+            z-index: 1000;
        
+          }
+
+          .nighttime .wrap {
+            background-color: #3a4d64;
+          }
+
+          .nighttime .logo-between {
+            z-index: 1000;
+            background-image: url("../../images/nighticon2.jpg");
           }
   
           /*content1 area. 룸 정보 슬라이드, 간단한 소개 등 포함*/
@@ -141,7 +161,7 @@
             position: relative;
             width: 100%;
             height: 1000px;
-            background-color: #fff5eb;
+           
             font-family:'batang';
   
           }
@@ -299,14 +319,12 @@
 
           .content02 {
             position: relative;
-
+    
             width: 1440px;
             margin:0 auto;
             margin-top: 150px;
             margin-bottom: 150px;
             padding: 0 20px 0 20px;
-
-          
 
             display: flex;
             flex-wrap: wrap;
@@ -315,6 +333,8 @@
             font-family: 'batang';
 
           }
+
+ 
 
           .content02 div {
             flex: 1 1 0;
@@ -326,6 +346,15 @@
             text-align: center;
 
           }
+
+            .daytime .content02 div {
+            background-color: white;
+          }
+
+            .nighttime .content02 div {
+            background-color: #3a4d64;
+          }
+
 
            .content02 h3 {
             margin-top:0;
@@ -349,12 +378,21 @@
 
           /*두번재 콘텐츠(공지사항, 이벤트)*/
 
+          .daytime .wrap3 {
+            background-color: white;
+          }
+
+          .nighttime .wrap3 {
+            background-color: #3a4d64;
+          }
+
+
           .content03 {
             position: relative;
             width: 960px;
             margin: 0 auto;
             overflow: hidden;
-            margin-top: 50px;
+            padding-top: 50px;
           }
 
           .headline {
@@ -370,7 +408,7 @@
           .addtional-link {
             position:absolute;
             right:0;
-            top:0;
+            top:50px;
             padding-right: 10px;
           }
 
@@ -378,6 +416,12 @@
             text-decoration: none;
             color:black;
           }
+
+          
+          .nighttime .addtional-link a {
+            color:  #e0e0e0;
+          }
+
 
           .addtional-link a:hover {
             text-decoration:underline;

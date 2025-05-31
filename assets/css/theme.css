@@ -20,7 +20,7 @@
   /* 밤 시간 테마 (남색/회색 테마) */
   .nighttime {
     background-color: #2f3b4c;
-    color: #e0e0e0;
+    color: #e0e0e0; 
   }
 
   .nighttime header {
