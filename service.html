@@ -19,8 +19,7 @@
 <body>
 
   <!-- 로그인 버튼 -->
-  <a class="login-btn" href="login.html">log in</a>
-  
+  <a id="loginBtn" class="login-btn" href="login.html">log in</a>
   <header>
     <div class="hamburger">
       <span></span>
@@ -105,13 +104,33 @@
       </dl>
     </div>
   </footer>
-  
-  <script>
-       // 페이지 로드 시 테마 적용
-       updateTheme();
 
-          // 1시간마다 테마 업데이트
-       setInterval(updateTheme, 60 * 60 * 1000);
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 로그인 상태에 따른 로그인/로그아웃 버튼 변경
+      const loginBtn = document.getElementById('loginBtn');
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+      if (isLoggedIn === 'true') {
+        loginBtn.textContent = 'log out';
+        loginBtn.href = '#';
+        loginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('isLoggedIn');
+          alert('로그아웃 되었습니다.');
+          location.reload();  // 페이지 새로고침하여 상태 갱신
+        });
+      } else {
+        loginBtn.textContent = 'log in';
+        loginBtn.href = 'login.html';
+      }
+    });
+    // 페이지 로드 시 테마 적용
+    updateTheme();
+
+    // 1시간마다 테마 업데이트
+    setInterval(updateTheme, 60 * 60 * 1000);
   </script>
 </body>
 

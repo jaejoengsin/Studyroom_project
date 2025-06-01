@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- 폰트링크 -->
-    <link rel="stylesheet" href="assets/css/font_style.css">
-    <!--css link -->
-    <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/components/signup.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="assets/scripts/hamburgerMenu.js"></script>
-    <script src="assets/scripts/time_theme.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- 폰트링크 -->
+  <link rel="stylesheet" href="assets/css/font_style.css">
+  <!--css link -->
+  <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/signup.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/scripts/hamburgerMenu.js"></script>
+  <script src="assets/scripts/time_theme.js"></script>
 
 </head>
 
 
 <body>
-         <!-- 로그인 버튼 -->
-  <a class="login-btn" href="login.html">log in</a>
+  <!-- 로그인 버튼 -->
+  <a id="loginBtn" class="login-btn" href="login.html">log in</a>
 
   <!-- 헤더 -->
   <header>
@@ -32,7 +33,7 @@
       <span></span>
     </div>
     <div class="logo">
-       <img src="assets/images/icon2.png" alt="icon" id="logo">
+      <img src="assets/images/icon2.png" alt="icon" id="logo">
     </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
@@ -42,88 +43,116 @@
     </nav>
   </header>
 
-    <section class="accession-box">
-        <h2>회원가입</h2>
-        <h3>회원정보 입력</h3>
-        <ul>
-            <li><span>이름</span><input id="name" type="text"></li>
-            <li><span>id</span><input id="id" type="text"></li>
-            <li><span>비밀번호</span><input id="password" type="text"></li>
-            <li><span>전화번호</span><input id="phone" type="text"></li>
-            <li><span>생년월일</span><input id="birth" type="text"></li>
-        </ul>
-        <div class="access-button" >
-          <button id="completeAccessionBotton">가입하기</button>
-        </div>
-    </section>
+  <section class="accession-box">
+    <h2>회원가입</h2>
+    <h3>회원정보 입력</h3>
+    <ul>
+      <li><span>이름</span><input id="name" type="text"></li>
+      <li><span>id</span><input id="id" type="text"></li>
+      <li><span>비밀번호</span><input id="password" type="text"></li>
+      <li><span>전화번호</span><input id="phone" type="text"></li>
+      <li><span>생년월일</span><input id="birth" type="text"></li>
+    </ul>
+    <div class="access-button">
+      <button id="completeAccessionBotton">가입하기</button>
+    </div>
+  </section>
 
-     <!-- 푸터 영역 -->
-        <footer>
-            <div class="policy">
-              <ul></ul>
-              <p class="address">
-                경기대 수원캠퍼스 웹프 스터디룸<br>
-                사업자명 : <br>
-                사업자등록번호 : <br>
-                개인정보보호관리 : k<br>    
-              </p>
-            </div>
-            <div class="shopinfo">
-              <dl>
-                <dt>모임공간 운영시간 :</dt>
-                <dd><strong>365일 24시간</strong> 이용가능</dd>
-              </dl>
-              <dl>
-                <dt>예약상담시간 :</dt>
-                <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
-              </dl>
-            </div>
-          </footer>
+  <!-- 푸터 영역 -->
+  <footer>
+    <div class="policy">
+      <ul></ul>
+      <p class="address">
+        경기대 수원캠퍼스 웹프 스터디룸<br>
+        사업자명 : <br>
+        사업자등록번호 : <br>
+        개인정보보호관리 : k<br>
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
 
-          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 
-          <script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginBtn = document.getElementById('loginBtn');
+      if (!loginBtn) return; // 로그인 버튼이 없는 페이지엔 실행 안함
 
-            $(document).ready(function() {
-              if (!localStorage.getItem("joinData")) {
-                const joinData = {};
-                localStorage.setItem("joinData", JSON.stringify(joinData));
-                console.log("객체 생성 완료");
-              } else {
-                console.log("객체 이미 존재함");
-              }
-            });
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-             function Fnext () {
-              const joinUser = {};
-              joinUser["name"] = $("#name").val();
-              joinUser["id"] = $("#id").val();
-              joinUser["password"] = $("#password").val();
-              joinUser["phone"] = $("#phone").val();
-              joinUser["birth"] = $("#birth").val();
-              for (const key in joinUser) {
-                if(joinUser[key]=="") {
-                  alert(`${key}가 입력되지 않았습니다`);
-                  return;
-                }
-              }
+      if (isLoggedIn === 'true') {
+        loginBtn.textContent = 'log out';
+        loginBtn.href = '#';
+        loginBtn.style.cursor = 'pointer';
 
-              const joinData = JSON.parse(localStorage.getItem("joinData"));
-              joinData[`${Object.keys(joinData).length}`] = joinUser;
-              localStorage.setItem("joinData",JSON.stringify(joinData));
-              alert("회원가입이 완료되었습니다!")
-              window.location.href="main.html";
-             }
+        // 기존에 이벤트 중복 방지 위해 먼저 이벤트 리스너 제거 후 추가 (optional)
+        loginBtn.replaceWith(loginBtn.cloneNode(true));
+        const newLoginBtn = document.getElementById('loginBtn') || document.querySelector('.login-btn');
 
-            $("#completeAccessionBotton").on("click", Fnext);
+        newLoginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('isLoggedIn');
+          alert('로그아웃 되었습니다.');
+          location.reload(); // 새로고침하여 상태 갱신
+        });
+      } else {
+        loginBtn.textContent = 'log in';
+        loginBtn.href = 'login.html';
+        loginBtn.style.cursor = 'pointer';
+      }
+    });
 
-               // 페이지 로드 시 테마 적용
-          updateTheme();
+    $(document).ready(function () {
+      if (!localStorage.getItem("joinData")) {
+        const joinData = {};
+        localStorage.setItem("joinData", JSON.stringify(joinData));
+        console.log("객체 생성 완료");
+      } else {
+        console.log("객체 이미 존재함");
+      }
+    });
 
-          // 1시간마다 테마 업데이트
-          setInterval(updateTheme, 60 * 60 * 1000);
+    function Fnext() {
+      const joinUser = {};
+      joinUser["name"] = $("#name").val();
+      joinUser["id"] = $("#id").val();
+      joinUser["password"] = $("#password").val();
+      joinUser["phone"] = $("#phone").val();
+      joinUser["birth"] = $("#birth").val();
+      for (const key in joinUser) {
+        if (joinUser[key] == "") {
+          alert(`${key}가 입력되지 않았습니다`);
+          return;
+        }
+      }
 
-          </script>
+      const joinData = JSON.parse(localStorage.getItem("joinData"));
+      joinData[`${Object.keys(joinData).length}`] = joinUser;
+      localStorage.setItem("joinData", JSON.stringify(joinData));
+      alert("회원가입이 완료되었습니다!")
+      window.location.href = "main.html";
+    }
+
+    $("#completeAccessionBotton").on("click", Fnext);
+
+    // 페이지 로드 시 테마 적용
+    updateTheme();
+
+    // 1시간마다 테마 업데이트
+    setInterval(updateTheme, 60 * 60 * 1000);
+
+  </script>
 
 </body>
 

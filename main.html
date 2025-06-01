@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 페이지</title>
-    
-    <!-- 폰트링크 -->
-    <link rel="stylesheet" href="assets/css/font_style.css">
-    <!--css link -->
-    <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/components/main.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
-    <script src="assets/scripts/hamburgerMenu.js"></script>
-    <script src="assets/scripts/time_theme.js"></script>
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 페이지</title>
+
+  <!-- 폰트링크 -->
+  <link rel="stylesheet" href="assets/css/font_style.css">
+  <!--css link -->
+  <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/main.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
+  <script src="assets/scripts/hamburgerMenu.js"></script>
+  <script src="assets/scripts/time_theme.js"></script>
+
 </head>
 
 
 <body>
-       <!-- 로그인 버튼 -->
+  <!-- 로그인 버튼 -->
 
-  <a class="login-btn" href="login.html">log in</a>
-  
+  <a id="loginBtn" class="login-btn" href="login.html">log in</a>
+
 
   <!-- 헤더 -->
   <header>
@@ -36,7 +37,7 @@
       <span></span>
     </div>
     <div class="logo">
-       <img src="assets/images/icon2.png" alt="icon" id="logo">
+      <img src="assets/images/icon2.png" alt="icon" id="logo">
     </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
@@ -47,169 +48,212 @@
   </header>
 
 
-    <!-- 메인 콘텐츠 영역 -->
-    
-    <main>
-        <section class="main-first-visible">
-          <div class="main-first-visible-logo">
-            <img class="animate__animated animate__fadeIn animate__slower animate__delay-0.7s" src="assets/images/icon.png" alt="">
-          </div>
-          <div class="main-first-visible-bgd"></div>
-          <div class="main-first-visible-intro">
-            <h1 class="animate__animated animate__fadeIn animate__slower animate__delay-0.7s" >insightroom에 오신 것을<br>환영합니다</h1>
+  <!-- 메인 콘텐츠 영역 -->
 
-          </div>
-        </section>
-        <section class="main-introduce scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-          <div>
-              <h2 style="font-size: 1.8em; margin-top:0px;">모두를 위한, 모두의 공간</h2>
-              <p style="font-size: 1.4em;">자유롭게, 편안하게</p>
-    
-          </div>
-        </section>
-        
-        <section class="content01">
-          <div class="wrap">
-          <div class="logo-between"></div>
-          </div>
-          <div class="explainarea scrolla " data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s" >
-            <p style="font-size: 1.5em; margin:0px; padding: 20px 0px">
-              그룹 스터디, 각종 회의를 위한 다양한 맞춤형 공간
-            </p>
-          </div>
-          <div class="showarea scrolla " data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-          <div class="show-box">
-            <div class="button-area">
-              <button class="showbutton-prev"></button>
-            </div>
-            <div class="showslide-list drag">
-              <div class="showslide-image" >
+  <main>
+    <section class="main-first-visible">
+      <div class="main-first-visible-logo">
+        <img class="animate__animated animate__fadeIn animate__slower animate__delay-0.7s" src="assets/images/icon.png"
+          alt="">
+      </div>
+      <div class="main-first-visible-bgd"></div>
+      <div class="main-first-visible-intro">
+        <h1 class="animate__animated animate__fadeIn animate__slower animate__delay-0.7s">insightroom에 오신 것을<br>환영합니다
+        </h1>
 
-              </div>
-              <div class="showslide-txt">
-                <p><b>Room 603</b></p>
-                <p>회의에 적합한 강의실</p>
-              </div>
-            </div>
-            <div class="button-area">
-              <button class="showbutton-next"></button>
-            </div>
-           </div>
-          </div>
-        </section>
-        <div class="wrap2">
-        <section class="content02 scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.3s">
-          <div><h3>쾌적하고 조용한 공간</h3><p>조용하고 분위기 속에서 편안하게 학습과 협업이 가능한 공간</p></div>
-          <div><h3>다양한 목적에 부합하는 공간</h3><p>소규모 회의나 그룹 스터디를 위한 공간까지, 목적에 따라 다양한 공간</p></div>
-          <div><h3>집중할 수 있는 공간</h3><p>학습과 업무에 온전히 집중할 수 있도록 구성된 공간</p></div>
-          <div><h3>오래 머무를 수 있는 공간</h3><p>장시간 공부와 업무를 이어갈 수 있는 공간</p></div>
+      </div>
+    </section>
+    <section class="main-introduce scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+      <div>
+        <h2 style="font-size: 1.8em; margin-top:0px;">모두를 위한, 모두의 공간</h2>
+        <p style="font-size: 1.4em;">자유롭게, 편안하게</p>
 
-        </section>
+      </div>
+    </section>
+
+    <section class="content01">
+      <div class="wrap">
+        <div class="logo-between"></div>
+      </div>
+      <div class="explainarea scrolla " data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+        <p style="font-size: 1.5em; margin:0px; padding: 20px 0px">
+          그룹 스터디, 각종 회의를 위한 다양한 맞춤형 공간
+        </p>
+      </div>
+      <div class="showarea scrolla " data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+        <div class="show-box">
+          <div class="button-area">
+            <button class="showbutton-prev"></button>
+          </div>
+          <div class="showslide-list drag">
+            <div class="showslide-image">
+
+            </div>
+            <div class="showslide-txt">
+              <p><b>Room 603</b></p>
+              <p>회의에 적합한 강의실</p>
+            </div>
+          </div>
+          <div class="button-area">
+            <button class="showbutton-next"></button>
+          </div>
         </div>
-        <!--공지사항 페이지에서 일부 데이터를 가져와 노출, more info는 더보기 링크로 공지사항 페이지로 연결됨-->
-        <div class="wrap3">
-        <section class="wrap content03" >
-          <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-            <h2 class="headline"><b>공지사항</b></h2>
-            <div class ="addtional-link "><a href="service.html">more info</a></div>
-            <ul id="notice" class="announce ">
-              <li>공지 | 웹프 스터디룸 1 | 날짜 2025-04-06</li>
-              <li>공지 | 시스템 점검 안내 | 날짜 2025-04-03</li>
-              <li>공지 | 봄맞이 이벤트 오픈 | 날짜 2025-03-28</li>
-            </ul>
-          </div>
-       
-          <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-            <h2 class="headline">QNA</h2>
-              <ul id="faq" class="announce scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-                <li>예약은 어떻게 하나요?</li>
-                <li>취소 및 변경은 언제까지 가능한가요?</li>
-                <li>예약을 변경하고 싶은데 어떻게 해야 하나요?</li>
-         </ul>
-         </div>
-        </section>
+      </div>
+    </section>
+    <div class="wrap2">
+      <section class="content02 scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.3s">
+        <div>
+          <h3>쾌적하고 조용한 공간</h3>
+          <p>조용하고 분위기 속에서 편안하게 학습과 협업이 가능한 공간</p>
+        </div>
+        <div>
+          <h3>다양한 목적에 부합하는 공간</h3>
+          <p>소규모 회의나 그룹 스터디를 위한 공간까지, 목적에 따라 다양한 공간</p>
+        </div>
+        <div>
+          <h3>집중할 수 있는 공간</h3>
+          <p>학습과 업무에 온전히 집중할 수 있도록 구성된 공간</p>
+        </div>
+        <div>
+          <h3>오래 머무를 수 있는 공간</h3>
+          <p>장시간 공부와 업무를 이어갈 수 있는 공간</p>
         </div>
 
-    </main>
+      </section>
+    </div>
+    <!--공지사항 페이지에서 일부 데이터를 가져와 노출, more info는 더보기 링크로 공지사항 페이지로 연결됨-->
+    <div class="wrap3">
+      <section class="wrap content03">
+        <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+          <h2 class="headline"><b>공지사항</b></h2>
+          <div class="addtional-link "><a href="service.html">more info</a></div>
+          <ul id="notice" class="announce ">
+            <li>공지 | 웹프 스터디룸 1 | 날짜 2025-04-06</li>
+            <li>공지 | 시스템 점검 안내 | 날짜 2025-04-03</li>
+            <li>공지 | 봄맞이 이벤트 오픈 | 날짜 2025-03-28</li>
+          </ul>
+        </div>
 
-     <!-- 푸터 영역 -->
-        <footer>
-            <div class="policy">
-              <ul></ul>
-              <p class="address">
-                경기대 수원캠퍼스 웹프 스터디룸<br>
-                사업자명 : <br>
-                사업자등록번호 : <br>
-                개인정보보호관리 : k<br>    
-              </p>
-            </div>
-            <div class="shopinfo">
-              <dl>
-                <dt>모임공간 운영시간 :</dt>
-                <dd><strong>365일 24시간</strong> 이용가능</dd>
-              </dl>
-              <dl>
-                <dt>예약상담시간 :</dt>
-                <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
-              </dl>
-            </div>
-          </footer>
-          <script>
+        <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+          <h2 class="headline">QNA</h2>
+          <ul id="faq" class="announce scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+            <li>예약은 어떻게 하나요?</li>
+            <li>취소 및 변경은 언제까지 가능한가요?</li>
+            <li>예약을 변경하고 싶은데 어떻게 해야 하나요?</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
-            $(document).ready(function () {
-            console.log("jQuery ready!");
-            $('.scrolla').scrolla({
-              mobile: true,
-              once: true,
-              animateCssVersion: 4
-            });
-            console.log("jQuery rasdfa!");
-          });
+  </main>
 
-            const slides = [
-            { image: "assets/images/room601.png", roomNum: "Room 601", description: "소규모로 빠르고 직관적인 회의가 가능한 그룹 룸" },
-            { image: "assets/images/room602.png", roomNum: "Room 602", description: "조용하고 차분한 공간에서 회의가 가능한 그룹 룸" },
-            { image: "assets/images/room603.png", roomNum: "Room 603", description: "세미나에 적합한 대형 그룹 룸" },
-            { image: "assets/images/room604.png", roomNum: "Room 604", description: "프리젠테이션 장비와 함께 중요한 회의를 할 수 있는 그룹 룸" },
-            { image: "assets/images/room605.png", roomNum: "Room 605", description: "소규모로 집중 가능한 원형 테이블을 구비한 그룹 룸" },
-            { image: "assets/images/room606.png", roomNum: "Room 606", description: "다양한 회의 장비 사용에 용이한 넓은 그룹 룸" }
-            ];
-          
-            let currentIndex = 0;
-            let prevButton = document.querySelector('.content01 .showbutton-prev');
-            let nextButton = document.querySelector('.content01 .showbutton-next');
-            let slideImage = document.querySelector('.content01 .showslide-image');
-            let slideTextBox = document.querySelector('.content01 .showslide-txt');
-            let slideText = slideTextBox.querySelectorAll('p');
+  <!-- 푸터 영역 -->
+  <footer>
+    <div class="policy">
+      <ul></ul>
+      <p class="address">
+        경기대 수원캠퍼스 웹프 스터디룸<br>
+        사업자명 : <br>
+        사업자등록번호 : <br>
+        개인정보보호관리 : k<br>
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
+  <script>
 
-            function changeContent (flag) {
-              currentIndex=(currentIndex+flag);
-              if(currentIndex<0){
-                currentIndex = slides.length-1;
-              }
-              else {
-                currentIndex %= slides.length;
-              }
-              slideImage.style.backgroundImage=`url('${slides[currentIndex].image}')`;
-              slideText[0].textContent = `${slides[currentIndex].roomNum}`;
-              slideText[1].textContent = `${slides[currentIndex].description}`;
-              
-            }
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginBtn = document.getElementById('loginBtn');
+      if (!loginBtn) return; // 로그인 버튼이 없는 페이지엔 실행 안함
 
-            prevButton.addEventListener('click', () => changeContent(-1));
-            nextButton.addEventListener('click', () => changeContent(1));
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-               // 페이지 로드 시 테마 적용
-          updateTheme();
+      if (isLoggedIn === 'true') {
+        loginBtn.textContent = 'log out';
+        loginBtn.href = '#';
+        loginBtn.style.cursor = 'pointer';
 
-          // 1시간마다 테마 업데이트
-          setInterval(updateTheme, 60 * 60 * 1000);
+        // 기존에 이벤트 중복 방지 위해 먼저 이벤트 리스너 제거 후 추가 (optional)
+        loginBtn.replaceWith(loginBtn.cloneNode(true));
+        const newLoginBtn = document.getElementById('loginBtn') || document.querySelector('.login-btn');
+
+        newLoginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('isLoggedIn');
+          alert('로그아웃 되었습니다.');
+          location.reload(); // 새로고침하여 상태 갱신
+        });
+      } else {
+        loginBtn.textContent = 'log in';
+        loginBtn.href = 'login.html';
+        loginBtn.style.cursor = 'pointer';
+      }
+    });
+
+    $(document).ready(function () {
+      console.log("jQuery ready!");
+      $('.scrolla').scrolla({
+        mobile: true,
+        once: true,
+        animateCssVersion: 4
+      });
+      console.log("jQuery rasdfa!");
+    });
+
+    const slides = [
+      { image: "assets/images/room601.png", roomNum: "Room 601", description: "소규모로 빠르고 직관적인 회의가 가능한 그룹 룸" },
+      { image: "assets/images/room602.png", roomNum: "Room 602", description: "조용하고 차분한 공간에서 회의가 가능한 그룹 룸" },
+      { image: "assets/images/room603.png", roomNum: "Room 603", description: "세미나에 적합한 대형 그룹 룸" },
+      { image: "assets/images/room604.png", roomNum: "Room 604", description: "프리젠테이션 장비와 함께 중요한 회의를 할 수 있는 그룹 룸" },
+      { image: "assets/images/room605.png", roomNum: "Room 605", description: "소규모로 집중 가능한 원형 테이블을 구비한 그룹 룸" },
+      { image: "assets/images/room606.png", roomNum: "Room 606", description: "다양한 회의 장비 사용에 용이한 넓은 그룹 룸" }
+    ];
+
+    let currentIndex = 0;
+    let prevButton = document.querySelector('.content01 .showbutton-prev');
+    let nextButton = document.querySelector('.content01 .showbutton-next');
+    let slideImage = document.querySelector('.content01 .showslide-image');
+    let slideTextBox = document.querySelector('.content01 .showslide-txt');
+    let slideText = slideTextBox.querySelectorAll('p');
+
+    function changeContent(flag) {
+      currentIndex = (currentIndex + flag);
+      if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
+      }
+      else {
+        currentIndex %= slides.length;
+      }
+      slideImage.style.backgroundImage = `url('${slides[currentIndex].image}')`;
+      slideText[0].textContent = `${slides[currentIndex].roomNum}`;
+      slideText[1].textContent = `${slides[currentIndex].description}`;
+
+    }
+
+    prevButton.addEventListener('click', () => changeContent(-1));
+    nextButton.addEventListener('click', () => changeContent(1));
+
+    // 페이지 로드 시 테마 적용
+    updateTheme();
+
+    // 1시간마다 테마 업데이트
+    setInterval(updateTheme, 60 * 60 * 1000);
 
 
-          </script>
+  </script>
 
 
 
-   
+
 </body>
+
 </html>

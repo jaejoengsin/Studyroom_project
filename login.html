@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>로그인</title> 
+  <title>웹프 스터디룸 로그인</title> 
     <!--css link -->
     <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
     <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
@@ -13,23 +13,22 @@
     <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
     <link rel="stylesheet" href="assets/css/login.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="assets/scripts/hamburgerMenu.js"></script>
-    <script src="assets/scripts/time_theme.js"></script>
 </head>
 
 <body>
 
-  <a class="login-btn" href="login.html">log in</a>
+  <a id="loginBtn" class="login-btn" href="login.html">log in</a>
 
   <header>
-  <div class="hamburger">
+      <div class="hamburger">
     <span></span>
     <span></span>
     <span></span>
   </div>
     <div class="logo">
       <img src="assets/images/icon2.png" alt="icon" id="logo">
-   </div>    <nav class="navbar">
+   </div>    
+   <nav class="navbar">
       <a href="main.html">홈</a>
       <a href="introduction.html">이용안내</a>
       <a href="service.html">고객지원</a>
@@ -83,46 +82,73 @@
   </footer>
 
   <script>
+    // 테마 변경
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isDaytime = hour >= 6 && hour < 18;
+      const logo = document.getElementById("logo");
+      if (isDaytime) {
+        document.body.classList.add('daytime');
+        document.body.classList.remove('nighttime');
+        logo.src = 'assets/images/icon2.png'; // 낮 로고
+      } else {
+        document.body.classList.add('nighttime');
+        document.body.classList.remove('daytime');
+        logo.src = 'assets/images/nighticon.png'; // 밤 로고
+      }
+    }
 
+    updateTheme();
+    setInterval(updateTheme, 60 * 60 * 1000);
+
+    // 로그인 처리
     function handleLogin() {
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value.trim();
+
       if (!username || !password) {
         alert("아이디와 비밀번호를 모두 입력해주세요.");
-        return;
-      }
-      const users  = JSON.parse(localStorage.getItem("joinData"));
-      let flag =false;
-      if(users) {
-        for( let i =0; i < Object.keys(users).length; i++){
-          const localId = users[`${i}`];
-          if((username == localId["id"]) && (password == localId["password"])) {
-            flag= true;
-           
-          }
-        }    
-      }
-
-      if(flag == false) {
-        alert("아이디와 비밀번호가 존재하지 않습니다");
         return;
       }
 
       alert(`${username}님 환영합니다!`);
       localStorage.setItem("isLoggedIn", "true"); // 로그인 상태 저장
-      location.href = "main.html"; // 또는 원하는 페이지로 이동
+      location.href = "main.html"; // 로그인 후 이동 페이지
     }
 
-    // 한글 입력 방지
+    // 한글 입력 방지 (아이디 입력란)
     document.getElementById("username").addEventListener("input", function () {
       this.value = this.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
     });
 
-  // 페이지 로드 시 테마 적용
-    updateTheme();
+    // 햄버거 메뉴 토글
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navbar = document.querySelector('nav.navbar');
 
-    // 1시간마다 테마 업데이트
-    setInterval(updateTheme, 60 * 60 * 1000);
+      hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+
+      // 로그인 상태에 따른 로그인/로그아웃 버튼 변경
+      const loginBtn = document.getElementById('loginBtn');
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+      if (isLoggedIn === 'true') {
+        loginBtn.textContent = 'log out';
+        loginBtn.href = '#';
+        loginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('isLoggedIn');
+          alert('로그아웃 되었습니다.');
+          location.reload();  // 페이지 새로고침하여 상태 갱신
+        });
+      } else {
+        loginBtn.textContent = 'log in';
+        loginBtn.href = 'login.html';
+      }
+    });
   </script>
 
 </body>

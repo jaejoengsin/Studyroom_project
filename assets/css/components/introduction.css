@@ -1,3 +1,26 @@
+/* 테마 공통: 낮 / 밤에 따른 전역 스타일 */
+body.daytime {
+  --text-color: #222;
+  --slot-bg: #f9f9f9;
+  --slot-hover: #eeeeee;
+  --selected-bg: #d1f0d1;
+  --selected-border: #4CAF50;
+}
+
+body.nighttime {
+  --text-color: #eee;
+  --slot-bg: #1e1e1e;
+  --slot-hover: #333;
+  --selected-bg: #2e5936;
+  --selected-border: #6FCF97;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ========== 이용안내 스타일 ========== */
 .room-intro {
   text-align: center;
   padding: 160px 20px 40px;
@@ -10,8 +33,8 @@
 
 .room-description {
   font-size: 16px;
-  color: #444;
   margin-bottom: 30px;
+  color: var(--text-color);
 }
 
 .room-map {
@@ -22,23 +45,23 @@
   border-radius: 10px;
 }
 
-/* 슬라이더 섹션 */
+/* ========== 슬라이더 영역 ========== */
 .room-slider-section {
   padding: 40px 70px;
   text-align: center;
 }
 
-/* 슬라이더 제목 */
 .slider-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: var(--text-color);
 }
 
 .room-slider-wrapper {
   width: 100%;
   overflow-x: auto;
-  white-space: nowrap; /* 인라인 블록 요소들이 한 줄에 붙게 */
+  white-space: nowrap;
   padding-bottom: 10px;
   box-sizing: border-box;
   scrollbar-width: thin;
@@ -46,28 +69,28 @@
 }
 
 .room-slider {
-  display: inline-flex;      /* 인라인 플렉스로 동작 */
+  display: inline-flex;
   justify-content: flex-start;
   gap: 50px;
   padding: 0 10px;
   box-sizing: border-box;
 }
 
-/* 각 슬롯 박스 */
+/* 개별 슬롯 */
 .room-slot {
   width: 200px;
-  height: 300px; /* 고정 높이 추가 */
-  flex-shrink: 0; /* 화면 작아져도 줄어들지 않게 */
+  height: 300px;
+  flex-shrink: 0;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 10px;
-  background: #f9f9f9;
+  background: var(--slot-bg);
   transition: background-color 0.3s ease;
   cursor: pointer;
   box-sizing: border-box;
+  color: var(--text-color);
 }
 
-/* 이미지 */
 .room-slot img {
   width: 100%;
   height: 150px;
@@ -75,45 +98,43 @@
   border-radius: 6px;
 }
 
-/* 텍스트 고정 높이 추가로 레이아웃 안정성 유지 */
 .room-slot h4 {
   font-size: 16px;
   margin-top: 10px;
   font-weight: bold;
-  height: auto; /* 고정 제거 */
-  overflow: visible; /* 잘림 방지 */
-  white-space: normal; /* 줄바꿈 허용 */
+  height: auto;
+  overflow: visible;
+  white-space: normal;
+  color: var(--text-color);
 }
 
 .room-slot p {
   font-size: 14px;
   margin-top: 8px;
-  color: #333;
-  height: auto; /* 고정 제거 */
-  overflow: visible; /* 잘림 방지 */
-  white-space: normal; /* 줄바꿈 허용 */
+  height: auto;
+  overflow: visible;
+  white-space: normal;
+  color: var(--text-color);
 }
 
-
-/* 마우스 오버 시 연회색 */
+/* 마우스 오버 시 */
 .room-slot:hover {
-  background-color: #eeeeee;
+  background-color: var(--slot-hover);
 }
 
 /* 선택된 슬롯 */
 .room-slot.selected {
-  background-color: #d1f0d1;
-  border-color: #4CAF50;
+  background-color: var(--selected-bg);
+  border-color: var(--selected-border);
 }
 
-/* 예약 버튼 중앙 정렬 */
+/* ========== 예약 버튼 ========== */
 .bottom-reserve {
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
 
-/* 예약 버튼 스타일 */
 .reserve-btn {
   padding: 14px 32px;
   font-size: 16px;

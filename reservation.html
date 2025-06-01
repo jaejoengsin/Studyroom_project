@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>스터디룸 예약페이지</title>
+  <title>웹프 스터디룸 예약</title>
   <!--css link -->
   <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
   <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
@@ -12,13 +12,11 @@
   <link rel="stylesheet" href="assets/css/components/reservation.css" type="text/css">
   <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="assets/scripts/hamburgerMenu.js"></script>
-  <script src="assets/scripts/time_theme.js"></script>
 </head>
 
 <body>
 
-  <a class="login-btn" href="login.html">log in</a>
+  <a id="loginBtn" class="login-btn" href="login.html">log in</a>
 
   <header>
     <div class="hamburger">
@@ -53,25 +51,14 @@
 
       <div class="section">
         <h3>스터디룸 선택</h3>
-        <label for="studyroom">스터디룸 선택:</label>
-        <select id="studyroom" onchange="updateSelectedStudyRoom()">
-          <option value="">스터디룸 선택</option>
-          <option value="601호">601호</option>
-          <option value="602호">602호</option>
-          <option value="603호">603호</option>
-          <option value="604호">604호</option>
-          <option value="605호">605호</option>
-          <option value="606호">606호</option>
-          <option value="607호">607호</option>
-          <option value="608호">608호</option>
-        </select>
+        <p id="selected-studyroom">-</p>
       </div>
       <hr>
       <div class="section">
         <h3>선택한 예약 정보</h3>
-        <p>선택한 날짜: <span id="selected-date"></span></p>
-        <p>선택한 시간: <span id="selected-time"></span></p>
-        <p>선택한 스터디룸: <span id="selected-studyroom"></span></p>
+        <p>선택한 날짜: <span id="selected-date">-</span></p>
+        <p>선택한 시간: <span id="selected-time">-</span></p>
+        <p>선택한 스터디룸: <span id="selected-studyroom-info">-</span></p> <!-- 여기 id만 변경 -->
       </div>
 
       <div class="section">
@@ -80,12 +67,10 @@
       </div>
 
       <div class="section">
-        <p>총 금액: <span id="total-price"></span>원</p>
+        <p>총 금액: <span id="total-price">5000</span>원</p>
       </div>
 
-      <!-- <button onclick="location.href='payment_page.html'">예약하기</button> -->
-      <button id="paymentLinkButton">예약하기</button>
-
+      <button onclick="location.href='payment_page.html'">예약하기</button>
     </div>
   </main>
 
@@ -110,6 +95,72 @@
   </footer>
 
   <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginBtn = document.getElementById('loginBtn');
+      if (!loginBtn) return; // 로그인 버튼이 없는 페이지엔 실행 안함
+
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+      if (isLoggedIn === 'true') {
+        loginBtn.textContent = 'log out';
+        loginBtn.href = '#';
+        loginBtn.style.cursor = 'pointer';
+
+        // 기존에 이벤트 중복 방지 위해 먼저 이벤트 리스너 제거 후 추가 (optional)
+        loginBtn.replaceWith(loginBtn.cloneNode(true));
+        const newLoginBtn = document.getElementById('loginBtn') || document.querySelector('.login-btn');
+
+        newLoginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('isLoggedIn');
+          alert('로그아웃 되었습니다.');
+          location.reload(); // 새로고침하여 상태 갱신
+        });
+      } else {
+        loginBtn.textContent = 'log in';
+        loginBtn.href = 'login.html';
+        loginBtn.style.cursor = 'pointer';
+      }
+    });
+
+    // 테마 변경
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isDaytime = hour >= 6 && hour < 18;
+      const logo = document.getElementById("logo");
+      if (isDaytime) {
+        document.body.classList.add('daytime');
+        document.body.classList.remove('nighttime');
+        logo.src = 'assets/images/icon2.png'; // 낮 로고
+      } else {
+        document.body.classList.add('nighttime');
+        document.body.classList.remove('daytime');
+        logo.src = 'assets/images/nighticon.png'; // 밤 로고
+      }
+    }
+
+    updateTheme();
+    setInterval(updateTheme, 60 * 60 * 1000);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const selectedRoom = localStorage.getItem("selectedRoom");
+
+      // 두 군데 표시 요소를 각각 가져옴
+      const roomDisplay = document.getElementById("selected-studyroom");
+      const roomDisplayInfo = document.getElementById("selected-studyroom-info");
+
+      if (selectedRoom) {
+        if (roomDisplay) roomDisplay.textContent = selectedRoom;
+        if (roomDisplayInfo) roomDisplayInfo.textContent = selectedRoom;
+      } else {
+        if (roomDisplay) roomDisplay.textContent = "-";
+        if (roomDisplayInfo) roomDisplayInfo.textContent = "-";
+      }
+    });
+
+
 
     // 예약 기능
     const timeContainer = document.getElementById("timeContainer");
@@ -162,39 +213,33 @@
       const peopleCount = parseInt(peopleInput.value) || 1;
       totalPriceSpan.textContent = (basePrice * peopleCount).toLocaleString();
     }
+
     generateTimeSlots();
     const userReservationData = {};
-    
+
     /*결제 페이지와 연동을 위해 제가 일단 추가했습니다.*/
-    function saveData () {
-     
+    function saveData() {
+
       /*맨 위에 작성한 선언 및 초기화 코드를 사용 가능하나 일단 따로 작성하였습니다*/
-     userReservationData["date"]=document.getElementById("selected-date").textContent; 
-     userReservationData["time"]=document.getElementById("selected-time").textContent; 
-     userReservationData["studyRoom"]=document.getElementById("selected-studyroom").textContent; 
-     userReservationData["people"]=document.getElementById("people").value; 
-     userReservationData["totalPrice"]=document.getElementById("total-price").textContent; 
-     for (const key in userReservationData) {
-      console.log(userReservationData[key]);
-       if(userReservationData[key]=="") {
-        alert(`${key}가 입력되지 않았습니다`);
-        return;
-       }
-     }
-     localStorage.setItem("userReservationData",JSON.stringify(userReservationData));
-     window.location.href="payment_page.html";
+      userReservationData["date"] = document.getElementById("selected-date").textContent;
+      userReservationData["time"] = document.getElementById("selected-time").textContent;
+      userReservationData["studyRoom"] = document.getElementById("selected-studyroom").textContent;
+      userReservationData["people"] = document.getElementById("people").value;
+      userReservationData["totalPrice"] = document.getElementById("total-price").textContent;
+      for (const key in userReservationData) {
+        console.log(userReservationData[key]);
+        if (userReservationData[key] == "") {
+          alert(`${key}가 입력되지 않았습니다`);
+          return;
+        }
+      }
+      localStorage.setItem("userReservationData", JSON.stringify(userReservationData));
+      window.location.href = "payment_page.html";
     }
- 
+
     let paymentLinkButton = document.getElementById("paymentLinkButton");
     paymentLinkButton.addEventListener('click', () => saveData());
     /*여기까지*/
-
-  // 페이지 로드 시 테마 적용
-    updateTheme();
-
-    // 1시간마다 테마 업데이트
-    setInterval(updateTheme, 60 * 60 * 1000);
-
   </script>
 
 </body>

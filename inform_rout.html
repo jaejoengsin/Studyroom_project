@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오시는길</title>
-     <!--css link -->
-     <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
-     <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
-     <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
-     <link rel="stylesheet" href="assets/css/components/inform.css" type="text/css">
-     <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-     <script src="assets/scripts/hamburgerMenu.js"></script>
-     <script src="assets/scripts/time_theme.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오시는길</title>
+  <!--css link -->
+  <link rel="stylesheet" href="assets/css/bass.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/comon.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/components/inform.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/scripts/hamburgerMenu.js"></script>
+  <script src="assets/scripts/time_theme.js"></script>
 </head>
+
 <body>
-      <!-- 로그인 버튼 -->
-  <a class="login-btn" href="login.html">log in</a>
+  <!-- 로그인 버튼 -->
+  <a id="loginBtn" class="login-btn" href="login.html">log in</a>
 
   <!-- 헤더 -->
   <header>
-      <div class="hamburger">
+    <div class="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
     <div class="logo">
-       <img src="assets/images/icon2.png" alt="icon" id= "logo">
+      <img src="assets/images/icon2.png" alt="icon" id="logo">
     </div>
     <nav class="navbar">
       <a href="main.html">홈</a>
@@ -37,106 +39,140 @@
     </nav>
   </header>
 
-     <main>
-        <!--작은 로고 이미지 메인의 맨 상단에 추가-->
-  
-         <section class="info">
-            <!--지도 이미지(임시) + 길 소개-->
-            <article class="info-form">
-              <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-                <h2><b>오시는길</b></h2>
-                <img src="assets/images/map.png" alt="스터디룸지도">
-                <ul>
-                  <li style="padding:0px;"><b>위치:</b> 경기도 수원시 영통구 광교산로 154-42</li>
-                  <li><b></b></li>
-                </ul>
-                </div>
-                <!--위치 파악에 도움이 될 수 있는 주변 정보-->
-                <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-                <h2><b>주변 정보</b></h2>
-                <ul>
-                    <li>건물 내 유료 주차 가능</li>
-                    <li>도보 5분 거리 이내에 공영주차장</li>
-                    <li>스타벅스 ○○지점 근처</li>
-                    <li>00역 3번 출구 도보 7분</li>
-                    <li>00 정류장 맞은편 건물</li>
-                    <li>00의원, 00헬스 클럽 건물 내부</li>
-                </ul>
-                </div>
-                <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-                <h2>스터디룸 입구</h2>
-                <!--입구사진(임시)-->
-                <img src="assets/images/insightroom_enter.png" alt="스터디룸입구">  
-                </div>
-                <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
-                <h2>입실 전 주의사항</h2>
-                <ul style="text-align: left; ">
-                    <li>외부음료 반입할 수 없습니다</li>
-                    <li>애완동물 출입은 금지합니다</li>
-                    <li>책상, 의자, 전자기기 등은 깨끗이 사용해 주세요.</li>
-                    <li>책상, 의자, 전자기기 등은 깨끗이 사용해 주세요.</li>
-                    <li>사용 후 쓰레기는 분리수거함에 버려주세요.</li>
-                    <li>사용 후 쓰레기는 분리수거함에 버려주세요.</li>
-                    <li>개인 소지품은 스스로 관리해 주세요. 분실 시 책임지지 않습니다.</li>
-                </ul>
-                </div>
-            </article>
-        </section>
-        <!--가장 하단에는 바로 지도 플랫폼(네이버,구글 등)으로 이동하고 스터디룸의 주소를 해당 플랫폼에 보내서 바로 길 찾기가 가능하도록 함.-->
-        <section class="mapLink">
-            <ul>
-                <li><a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90/place/11591483?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp" target="_blank"><img src="assets/icons/Map_Service_Icon.png" alt="네이버 지도"></a></li>
-                <li><a href="https://www.google.com/maps/place/%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90/data=!3m2!1e3!4b1!4m6!3m5!1s0x357b5c9c1e337b5b:0x437f7735e290ec4d!8m2!3d37.300485!4d127.035833!16zL20vMGJqNDlz?hl=ko&entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="assets/icons/icons8-google-maps-new-48.png" alt="구글 지도"></a></li>
-            </ul>
-        </section>
-    </main>
+  <main>
+    <!--작은 로고 이미지 메인의 맨 상단에 추가-->
 
-        <!-- 푸터 영역 -->
-        <footer>
-            <div class="policy">
-              <ul></ul>
-              <p class="address">
-                경기대 수원캠퍼스 웹프 스터디룸<br>
-                사업자명 : <br>
-                사업자등록번호 : <br>
-                개인정보보호관리 : k<br>    
-              </p>
-            </div>
-            <div class="shopinfo">
-              <dl>
-                <dt>모임공간 운영시간 :</dt>
-                <dd><strong>365일 24시간</strong> 이용가능</dd>
-              </dl>
-              <dl>
-                <dt>예약상담시간 :</dt>
-                <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
-              </dl>
-            </div>
-          </footer>
+    <section class="info">
+      <!--지도 이미지(임시) + 길 소개-->
+      <article class="info-form">
+        <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+          <h2><b>오시는길</b></h2>
+          <img src="assets/images/map.png" alt="스터디룸지도">
+          <ul>
+            <li style="padding:0px;"><b>위치:</b> 경기도 수원시 영통구 광교산로 154-42</li>
+            <li><b></b></li>
+          </ul>
+        </div>
+        <!--위치 파악에 도움이 될 수 있는 주변 정보-->
+        <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+          <h2><b>주변 정보</b></h2>
+          <ul>
+            <li>건물 내 유료 주차 가능</li>
+            <li>도보 5분 거리 이내에 공영주차장</li>
+            <li>스타벅스 ○○지점 근처</li>
+            <li>00역 3번 출구 도보 7분</li>
+            <li>00 정류장 맞은편 건물</li>
+            <li>00의원, 00헬스 클럽 건물 내부</li>
+          </ul>
+        </div>
+        <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+          <h2>스터디룸 입구</h2>
+          <!--입구사진(임시)-->
+          <img src="assets/images/insightroom_enter.png" alt="스터디룸입구">
+        </div>
+        <div class="scrolla" data-animate="fadeIn" data-duration="1.5s" data-delay="0.5s">
+          <h2>입실 전 주의사항</h2>
+          <ul style="text-align: left; ">
+            <li>외부음료 반입할 수 없습니다</li>
+            <li>애완동물 출입은 금지합니다</li>
+            <li>책상, 의자, 전자기기 등은 깨끗이 사용해 주세요.</li>
+            <li>책상, 의자, 전자기기 등은 깨끗이 사용해 주세요.</li>
+            <li>사용 후 쓰레기는 분리수거함에 버려주세요.</li>
+            <li>사용 후 쓰레기는 분리수거함에 버려주세요.</li>
+            <li>개인 소지품은 스스로 관리해 주세요. 분실 시 책임지지 않습니다.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <!--가장 하단에는 바로 지도 플랫폼(네이버,구글 등)으로 이동하고 스터디룸의 주소를 해당 플랫폼에 보내서 바로 길 찾기가 가능하도록 함.-->
+    <section class="mapLink">
+      <ul>
+        <li><a
+            href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90/place/11591483?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp"
+            target="_blank"><img src="assets/icons/Map_Service_Icon.png" alt="네이버 지도"></a></li>
+        <li><a
+            href="https://www.google.com/maps/place/%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90/data=!3m2!1e3!4b1!4m6!3m5!1s0x357b5c9c1e337b5b:0x437f7735e290ec4d!8m2!3d37.300485!4d127.035833!16zL20vMGJqNDlz?hl=ko&entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoASAFQAw%3D%3D"
+            target="_blank"><img src="assets/icons/icons8-google-maps-new-48.png" alt="구글 지도"></a></li>
+      </ul>
+    </section>
+  </main>
 
-          <!--jquary plogin-->
-          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
+  <!-- 푸터 영역 -->
+  <footer>
+    <div class="policy">
+      <ul></ul>
+      <p class="address">
+        경기대 수원캠퍼스 웹프 스터디룸<br>
+        사업자명 : <br>
+        사업자등록번호 : <br>
+        개인정보보호관리 : k<br>
+      </p>
+    </div>
+    <div class="shopinfo">
+      <dl>
+        <dt>모임공간 운영시간 :</dt>
+        <dd><strong>365일 24시간</strong> 이용가능</dd>
+      </dl>
+      <dl>
+        <dt>예약상담시간 :</dt>
+        <dd>평일&amp;토요일 10시~22시 (일요일 10시~20시)</dd>
+      </dl>
+    </div>
+  </footer>
 
-          <script>
-            $(document).ready(function () {
-            console.log("jQuery ready!");
-            $('.scrolla').scrolla({
-              mobile: true,
-              once: true,
-              animateCssVersion: 4
-            });
-            console.log("jQuery rasdfa!");
-          });
+  <!--jquary plogin-->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-scrolla@0.0.3/dist/js/jquery.scrolla.min.js"></script>
 
-             // 페이지 로드 시 테마 적용
-          updateTheme();
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginBtn = document.getElementById('loginBtn');
+      if (!loginBtn) return; // 로그인 버튼이 없는 페이지엔 실행 안함
 
-          // 1시간마다 테마 업데이트
-          setInterval(updateTheme, 60 * 60 * 1000);
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-          
-          </script>
+      if (isLoggedIn === 'true') {
+        loginBtn.textContent = 'log out';
+        loginBtn.href = '#';
+        loginBtn.style.cursor = 'pointer';
+
+        // 기존에 이벤트 중복 방지 위해 먼저 이벤트 리스너 제거 후 추가 (optional)
+        loginBtn.replaceWith(loginBtn.cloneNode(true));
+        const newLoginBtn = document.getElementById('loginBtn') || document.querySelector('.login-btn');
+
+        newLoginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('isLoggedIn');
+          alert('로그아웃 되었습니다.');
+          location.reload(); // 새로고침하여 상태 갱신
+        });
+      } else {
+        loginBtn.textContent = 'log in';
+        loginBtn.href = 'login.html';
+        loginBtn.style.cursor = 'pointer';
+      }
+    });
+
+    $(document).ready(function () {
+      console.log("jQuery ready!");
+      $('.scrolla').scrolla({
+        mobile: true,
+        once: true,
+        animateCssVersion: 4
+      });
+      console.log("jQuery rasdfa!");
+    });
+
+    // 페이지 로드 시 테마 적용
+    updateTheme();
+
+    // 1시간마다 테마 업데이트
+    setInterval(updateTheme, 60 * 60 * 1000);
+
+
+  </script>
 
 </body>
+
 </html>
